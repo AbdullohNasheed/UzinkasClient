@@ -1,0 +1,1 @@
+export {default as ApplicationScreen} from"./view"
