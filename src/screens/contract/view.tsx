@@ -11,7 +11,7 @@ import DefaultButton from "../../components/general/DefaultButton";
 import DefaultImageBackground from "../../components/general/DefaultImageBackground";
 import { useContractScreenHook } from "./hooks";
 import { styles } from "./style";
-let {onApplecationPress, onPinCodPress } = useContractScreenHook();
+let {onApplecationPress, onApplecation2Press} = useContractScreenHook();
 const Contractview = () => {
 	return (
 		<DefaultImageBackground>
@@ -23,7 +23,7 @@ const Contractview = () => {
 					</Text>
 				</View>
 				<DefaultButton onPress={onApplecationPress} text={"Да"} />
-				<DefaultButton onPress={onPinCodPress} text={"Нет"} />
+				<DefaultButton onPress={onApplecation2Press} text={"Нет"} />
 			</View>
 		</DefaultImageBackground>
 	);

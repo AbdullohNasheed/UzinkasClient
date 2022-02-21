@@ -1,12 +1,18 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet, Image, StyleProp, ViewStyle } from "react-native";
-import { MenuIcon } from "../../assets/icons/icons";
+import { BellIcoon, MenuIcon } from "../../assets/icons/icons";
+import { ROUTES } from "../../navigation/ROUTES";
 
 export interface HeaderComponentProps {
     text: string;
     style: StyleProp<ViewStyle>
 
 }
+ let navigation = useNavigation();
+ const onNotificationPress = () => {
+   navigation.navigate(ROUTES.NOTIFICATION);
+ };
 
 
 const HeaderComponent = ({text}:HeaderComponentProps) => {
@@ -17,8 +23,8 @@ const HeaderComponent = ({text}:HeaderComponentProps) => {
 				style={styles.image}
 			/>
 			<Text style={styles.text}>{text}</Text>
-			<TouchableOpacity>
-				<MenuIcon />
+			<TouchableOpacity onPress={onNotificationPress}>
+				<BellIcoon />
 			</TouchableOpacity>
 		</View>
 	);

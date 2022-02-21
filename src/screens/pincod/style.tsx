@@ -41,6 +41,9 @@ export const styles = StyleSheet.create({
         borderWidth: 1,
         marginHorizontal: 6,
     },
+    bgWhite:{
+        backgroundColor: '#fff',
+    },
     passNumber: {
         borderWidth: 1,
         borderColor: 'rgba(0, 152, 153, 1)',

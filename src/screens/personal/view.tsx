@@ -30,12 +30,8 @@ const Personalview = () => {
             onPress={onInfarmationPress}
             style={styles.applicationBox}>
             <View
-              style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-              }}>
-              <NoteeIcon style={{marginVertical: 40}} />
+              style={styles.bottomBox}>
+              <NoteeIcon style={{marginVertical: 40, marginLeft: 10,}} />
               <View>
                 <Text style={styles.applicationText}>Информация</Text>
               </View>
@@ -45,12 +41,7 @@ const Personalview = () => {
             onPress={onNotificationPress}
             style={styles.applicationBox}>
             <View
-              style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-                marginHorizontal: 10,
-                justifyContent: 'space-between',
-              }}>
+              style={styles.bottomBox}>
               <BellIcon
                 style={{
                   marginVertical: 40,
@@ -66,12 +57,7 @@ const Personalview = () => {
             onPress={onCancelonPress}
             style={styles.applicationBox}>
             <View
-              style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-                marginHorizontal: 10,
-                justifyContent: 'space-between',
-              }}>
+              style={styles.bottomBox}>
               <DelitIcon
                 style={{
                   marginVertical: 40,
@@ -84,12 +70,7 @@ const Personalview = () => {
           </TouchableOpacity>
           <TouchableOpacity style={styles.applicationBox}>
             <View
-              style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-                marginHorizontal: 10,
-                justifyContent: 'space-between',
-              }}>
+              style={styles.bottomBox}>
               <HandPhoneIcon style={{marginVertical: 40}} />
               <View>
                 <Text style={styles.applicationText}>Заказать инкассацию</Text>

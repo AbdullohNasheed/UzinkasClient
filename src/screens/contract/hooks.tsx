@@ -7,9 +7,9 @@ export const useContractScreenHook = () => {
 	let onApplecationPress = () => {
 		navigation.navigate(ROUTES.APPLICATION);
 	};
-	let onPinCodPress = () => {
-		navigation.navigate(ROUTES.PINCODE);
+	let onApplecation2Press = () => {
+		navigation.navigate(ROUTES.APPLICATION);
 	};
 
-	return { onApplecationPress, onPinCodPress };
+	return { onApplecationPress, onApplecation2Press };
 };

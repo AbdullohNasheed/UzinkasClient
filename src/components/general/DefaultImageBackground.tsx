@@ -29,8 +29,8 @@ const styles = StyleSheet.create({
 		backgroundColor: "rgba(24, 25, 38, 1)",
 	},
 	image: {
-		width: Dimensions.get("window").width - 100,
-		height: Dimensions.get("window").width - 60,
+		width: Dimensions.get("window").width - 115,
+		height: Dimensions.get("window").width - 70,
 		top: undefined,
 		bottom: undefined,
 		left: undefined,

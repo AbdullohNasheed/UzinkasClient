@@ -3,8 +3,10 @@ import { View, Text, Image } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import DefaultButton from '../../components/general/DefaultButton'
 import DefaultImageBackground from '../../components/general/DefaultImageBackground'
+import { useQrkodScreenHook } from '../orderAccording/hooks'
+import { useKodScreenHook } from './hooks'
 import { styles } from './style'
-
+let { onCenceelonPress } = useKodScreenHook();
 const QrKodview = () => {
 	return (
 		<DefaultImageBackground>
@@ -17,7 +19,7 @@ const QrKodview = () => {
 				</View>
 				<View style={styles.bottonBox}>
 					<DefaultButton text={'Сохранить'}/>
-					<DefaultButton text={'Отмена'}/>
+					<DefaultButton onPress={onCenceelonPress}  text={'Отмена'}/>
 				</View>
 			</SafeAreaView>
 		</DefaultImageBackground>

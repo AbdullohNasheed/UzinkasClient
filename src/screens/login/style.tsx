@@ -10,9 +10,12 @@ export const styles = StyleSheet.create({
 		// alignItems: "center",
 	},
 	imageInkass: {
-		width: Dimensions.get("window").width - 210,
-		height: Dimensions.get("window").width - 230,
-		marginVertical: 35,
+		// width: Dimensions.get("window").width - 210,
+		// height: Dimensions.get("window").width - 230,
+		width: 100,
+		height: 110,
+		marginVertical: 20,
+		// marginVertical: 35,
 	},
 	buttonBox: {
 		borderWidth: 1,
@@ -28,11 +31,14 @@ export const styles = StyleSheet.create({
 		fontWeight: "bold",
 	},
 	text: {
-		color: "#fff",
-		fontSize: 25,
-		fontWeight: "700",
+		// marginVertical: 20,
+		textAlign: 'center',
+		color: "#E3A162",
+		fontSize: 17,
+		fontWeight: "500",
+		marginHorizontal: 20,
 	},
 	buttonContainer: {
-		marginVertical: 60,
+		marginVertical: 40,
 	},
 });

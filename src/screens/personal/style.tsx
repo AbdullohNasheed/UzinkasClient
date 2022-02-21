@@ -45,7 +45,13 @@ export const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: '600',
         marginRight: '35%',
-        marginHorizontal: 30,
+        marginHorizontal: 25,
 
+    },
+    bottomBox:{
+        alignItems: 'center',
+        flexDirection: 'row',
+        marginHorizontal: 40,
+        justifyContent: 'center',
     },
 })

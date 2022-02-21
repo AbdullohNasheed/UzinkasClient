@@ -12,8 +12,10 @@ import { HomeIcon } from "../assets/icons/icons";
 import { CancelScreen } from "../screens/ cancel";
 import { ChoosingScreen } from "../screens/choosing";
 import { DataScreen } from "../screens/data";
+import { InformationScreen } from "../screens/information";
 import { PersonalScreen } from "../screens/personal";
 import PersonalStack from "../screens/personal/hooks";
+import { ToOrderScreen } from "../screens/toOrder";
 import { VisitHistoryScreen } from "../screens/visitHistory";
 import HomeStack from "./HomeStack";
 
@@ -103,7 +105,7 @@ const Tabs = () => {
 
 				<Tab.Screen
 					name="Screen"
-					component={VisitHistoryScreen}
+					component={ToOrderScreen}
 					options={{
 						tabBarIcon: ({ focused }) => (
 							<Image
@@ -125,7 +127,7 @@ const Tabs = () => {
 
 				<Tab.Screen
 					name="New"
-					component={DataScreen}
+					component={InformationScreen}
 					options={{
 						tabBarIcon: ({ focused }) => (
 							<View

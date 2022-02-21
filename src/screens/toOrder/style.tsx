@@ -13,9 +13,11 @@ export const styles = StyleSheet.create({
     trackBox:{
         backgroundColor: '#181926',
         alignItems: 'center',
-        borderRadius: 150,
-        marginVertical: 80,
-        marginHorizontal: 80,
+        justifyContent: 'center',
+        width: 200,
+        height: 200,
+        borderRadius: 200,
+
     },
     icon: {
         marginVertical: 40,
