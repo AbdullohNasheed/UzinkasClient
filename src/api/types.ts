@@ -57,6 +57,42 @@ export interface User {
 }
 
 export interface LoginResponse {
-  user: User;
+  user?: User;
   token: string;
+}
+export interface Order {
+  client_id: number;
+  date: string;
+  amount: string;
+  bag: string;
+  hash: string;
+  updated_at: Date;
+  created_at: Date;
+  id: number;
+}
+
+export interface OrderResponse {
+  success: string;
+  order?: Order;
+  message: string;
+  token: string;
+}
+export interface OrderRequest {
+  date: string;
+  amount: string;
+  bag: string;
+  time: string;
+}
+export interface PartnerRequest {
+  name_organization: string;
+  customer_name: string;
+  phone_number: string;
+  email: string;
+}
+export interface QuestionnaireRequest {
+  name_object: string;
+  location: string;
+  amount_money: string;
+  work_plan: string;
+  plan_visit_inkass: string;
 }

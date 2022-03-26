@@ -4,6 +4,7 @@ import {
   StyleProp,
   StyleSheet,
   Text,
+  TextStyle,
   TouchableOpacity,
   View,
   ViewStyle,
@@ -11,9 +12,9 @@ import {
 
 export interface DefaultButtonProps {
   text: string;
-  onPress: any;
-  style: StyleProp<ViewStyle>;
-  textStyle: StyleProp<ViewStyle>;
+  onPress?: any;
+  style?: StyleProp<ViewStyle>;
+  textStyle?: StyleProp<TextStyle>;
 }
 
 const DefaultButton = ({
@@ -22,12 +23,12 @@ const DefaultButton = ({
   textStyle,
   onPress = () => {},
 }: DefaultButtonProps) => {
-//   let containerStyle = styles.lightContainerStyle;
-//   let textStyle = styles.lightText;
+  //   let containerStyle = styles.lightContainerStyle;
+  //   let textStyle = styles.lightText;
 
   return (
-    <TouchableOpacity style={[styles.buttonContainer,style]} onPress={onPress}>
-        <Text style={[styles.buttonText, textStyle]}>{text}</Text>
+    <TouchableOpacity style={[styles.buttonContainer, style]} onPress={onPress}>
+      <Text style={[styles.buttonText, textStyle]}>{text}</Text>
     </TouchableOpacity>
   );
 };
@@ -35,7 +36,7 @@ const DefaultButton = ({
 export default DefaultButton;
 
 const styles = StyleSheet.create({
-	buttonContainer:{
+  buttonContainer: {
     marginHorizontal: 20,
     borderRadius: 13,
     alignItems: 'center',
@@ -43,11 +44,11 @@ const styles = StyleSheet.create({
     borderWidth: 1.5,
     borderColor: ' rgba(0, 152, 153, 1)',
     marginVertical: 15,
-	},
-	buttonText:{
+  },
+  buttonText: {
     marginVertical: 18,
     fontSize: 18,
     color: 'rgba(0, 152, 153, 1)',
     fontWeight: 'bold',
   },
-  });
+});

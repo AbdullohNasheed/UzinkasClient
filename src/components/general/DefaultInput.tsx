@@ -1,6 +1,8 @@
+import {types} from '@babel/core';
 import React from 'react';
 import {
   Dimensions,
+  Keyboard,
   Platform,
   StyleSheet,
   Text,
@@ -9,10 +11,12 @@ import {
 } from 'react-native';
 
 export interface DefaultInputProps {
-  placeholder: string;
+  placeholder?: string;
+  keyboardType?: string;
   icon: (props: any) => JSX.Element;
   value?: string;
   onChange?: (e: string) => void;
+  hasError?: boolean;
 }
 
 const DefaultInput = ({
@@ -20,18 +24,21 @@ const DefaultInput = ({
   placeholder,
   onChange,
   value,
+  hasError,
+  keyboardType,
 }: DefaultInputProps) => {
   let Icon = icon;
   return (
     <View>
-      <View style={styles.inputContainer}>
-        <Icon style={styles.iconStyles} />
+      <View style={[styles.inputContainer, hasError && styles.errorContainer]}>
+        <Icon style={styles.iconStyles} fill={hasError ? 'red' : '#009899'} />
         <TextInput
           placeholderTextColor={'rgba(62, 62, 62, 1)'}
           placeholder={placeholder}
           style={styles.registerIcon}
           onChangeText={onChange}
           value={value}
+          keyboardType={keyboardType}
         />
       </View>
     </View>
@@ -58,5 +65,9 @@ const styles = StyleSheet.create({
   },
   iconStyles: {
     marginHorizontal: 10,
+  },
+  errorContainer: {
+    borderColor: 'red',
+    borderWidth: 1,
   },
 });

@@ -19,13 +19,15 @@ export const styles = StyleSheet.create({
 	},
 	buttonBox: {
 		borderWidth: 1,
+		height: 60,
+		alignContent: 'center',
+		justifyContent: 'center',
 		borderColor: "rgba(0, 152, 153, 1)",
 		marginHorizontal: 20,
 		alignItems: "center",
 		borderRadius: 15,
 	},
 	buttonText: {
-		marginVertical: 16,
 		color: "rgba(0, 152, 153, 1)",
 		fontSize: 22,
 		fontWeight: "bold",
@@ -40,5 +42,18 @@ export const styles = StyleSheet.create({
 	},
 	buttonContainer: {
 		marginVertical: 40,
+	},
+	errorBox:{
+		alignItems: 'center',
+		justifyContent: 'center',
+		marginTop: 10,
+		borderWidth: 1,
+		borderColor: 'red',
+	},
+	errorText:{
+		color: 'red',
+		fontSize: 14,
+		marginHorizontal: 25,
+		fontWeight:'bold',
 	},
 });

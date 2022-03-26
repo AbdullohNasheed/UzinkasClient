@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import {
   BellIcon,
+  BorderIcon,
   DelitIcon,
   HandPhoneIcon,
   MenuIcon,
@@ -18,69 +19,67 @@ import {
 import HeaderComponent from '../../components/header/Header';
 import {usePersonalScreenHook} from './hooks';
 import {styles} from './style';
-let {onInfarmationPress, onNotificationPress, onCancelonPress} =
-  usePersonalScreenHook();
-const Personalview = () => {
+let {
+  onInfarmationPress,
+  onNotificationPress,
+  onCancelonPress,
+  onToOrderPress,
+  onMyOrdersPress,
+} = usePersonalScreenHook();
+const PersonalView = () => {
   return (
     <View style={styles.container}>
-      <HeaderComponent text={'Личный кабинет'} />
-      <ScrollView style={styles.applicationContainer}>
-        <View style={{marginVertical: 50, marginBottom: 130}}>
-          <TouchableOpacity
-            onPress={onInfarmationPress}
-            style={styles.applicationBox}>
-            <View
-              style={styles.bottomBox}>
-              <NoteeIcon style={{marginVertical: 40, marginLeft: 10,}} />
-              <View>
-                <Text style={styles.applicationText}>Информация</Text>
+      <View style={styles.headerContainer}>
+        <HeaderComponent text={'Личный кабинет'} />
+      </View>
+      <View style={styles.scrollContainer}>
+        <ScrollView>
+          <View style={{marginBottom: 180}}>
+            <TouchableOpacity onPress={onInfarmationPress} style={styles.box}>
+              <View style={styles.boxOne}>
+                <NoteeIcon style={{marginRight: 10}} />
               </View>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={onNotificationPress}
-            style={styles.applicationBox}>
-            <View
-              style={styles.bottomBox}>
-              <BellIcon
-                style={{
-                  marginVertical: 40,
-				  left: 20
-                }}
-              />
-              <View>
-                <Text style={styles.applicationText}>Уведомления (1)</Text>
+              <View style={styles.boxTwo}>
+                <Text style={styles.text}>Информация</Text>
               </View>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={onCancelonPress}
-            style={styles.applicationBox}>
-            <View
-              style={styles.bottomBox}>
-              <DelitIcon
-                style={{
-                  marginVertical: 40,
-                }}
-              />
-              <View>
-                <Text style={styles.applicationText}>Отменить инкассацию</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={onNotificationPress} style={styles.box}>
+              <View style={styles.boxOne}>
+                <BellIcon />
               </View>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.applicationBox}>
-            <View
-              style={styles.bottomBox}>
-              <HandPhoneIcon style={{marginVertical: 40}} />
-              <View>
-                <Text style={styles.applicationText}>Заказать инкассацию</Text>
+              <View style={styles.boxTwo}>
+                <Text style={styles.text}>Уведомления (1)</Text>
               </View>
-            </View>
-          </TouchableOpacity>
-        </View>
-      </ScrollView>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={onCancelonPress} style={styles.box}>
+              <View style={styles.boxOne}>
+                <DelitIcon />
+              </View>
+              <View style={styles.boxTwo}>
+                <Text style={styles.text}>Отменить инкассацию</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={onToOrderPress} style={styles.box}>
+              <View style={styles.boxOne}>
+                <HandPhoneIcon />
+              </View>
+              <View style={styles.boxTwo}>
+                <Text style={styles.text}>Заказать инкассацию</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={onMyOrdersPress} style={styles.box}>
+              <View style={styles.boxOne}>
+                <BorderIcon />
+              </View>
+              <View style={styles.boxTwo}>
+                <Text style={styles.text}>Мои заказы</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+        </ScrollView>
+      </View>
     </View>
   );
 };
 
-export default Personalview;
+export default PersonalView;

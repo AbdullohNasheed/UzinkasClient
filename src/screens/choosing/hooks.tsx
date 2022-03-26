@@ -8,7 +8,7 @@ export const useChoosingScreenHook = () => {
 		navigation.navigate(ROUTES.LOGIN);
 	};
 	let onContractPress = () => {
-		navigation.navigate(ROUTES.HAS_CONTRACT);
+		navigation.navigate(ROUTES.APPLICATION);
 	};
 	return { onLoginPress, onContractPress };
 };

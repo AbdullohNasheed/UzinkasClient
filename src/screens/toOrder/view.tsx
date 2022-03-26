@@ -8,6 +8,7 @@ import {usesOrderScreenHook, useToOrderScreenHook} from './hooks';
 import {styles} from './style';
 let {onOrderPress, onAdditionalPress} = usesOrderScreenHook();
 const ToOrderview = () => {
+  console.log('toDoOrderView')
   return (
     <SafeAreaView style={styles.container}>
       <HeaderComponent text={'Заказать'} />

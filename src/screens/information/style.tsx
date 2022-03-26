@@ -46,14 +46,15 @@ export const styles = StyleSheet.create({
         marginHorizontal: 25,
     },
     textOne:{
-        fontSize: 17,
+        fontSize: 15,
         fontWeight: '700',
         color: '#fff',
     },
     textTwo:{
         color: 'rgba(182, 182, 182, 1)',
-        fontSize: 15,
+        fontSize: 14,
         fontWeight: '500',
         marginRight:"35%",
+        marginVertical: 5,
     },
 });
