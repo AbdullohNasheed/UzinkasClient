@@ -1,16 +1,18 @@
-import {useRoute} from '@react-navigation/native';
+import {useNavigation, useRoute} from '@react-navigation/native';
 import React from 'react';
 import {Image, View} from 'react-native';
 import QRCode from 'react-native-qrcode-svg';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import DefaultButton from '../../components/general/DefaultButton';
 import DefaultImageBackground from '../../components/general/DefaultImageBackground';
-import { useKodScreenHook } from './hooks';
+import {ROUTES} from '../../navigation/ROUTES';
+import {useKodScreenHook} from './hooks';
 import {styles} from './style';
 
 const QrKodView = () => {
   const route = useRoute();
-  const { onCenceelonPress} = useKodScreenHook();
+  const navigate = useNavigation();
+  const {onBackPress, onOrderAdditionalPress} = useKodScreenHook();
   return (
     <DefaultImageBackground>
       <SafeAreaView>
@@ -20,13 +22,16 @@ const QrKodView = () => {
             source={require('../../assets/image/inakass3.png')}
           />
           <View style={styles.qrKodBox}>
-            <QRCode value={route?.params?.hash} />
+            <QRCode size={210} value={route?.params?.hash} />
             {/* <Image source={require('../../assets/image/qrkod.png')} /> */}
           </View>
         </View>
         <View style={styles.bottonBox}>
-          <DefaultButton text={'Сохранить'} />
-          <DefaultButton onPress={onCenceelonPress} text={'Отмена'} />
+          <DefaultButton
+            onPress={onOrderAdditionalPress}
+            text={'Подтвердить'}
+          />
+          <DefaultButton onPress={onBackPress} text={'Отмена'} />
         </View>
       </SafeAreaView>
     </DefaultImageBackground>

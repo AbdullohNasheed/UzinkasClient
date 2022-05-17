@@ -9,35 +9,56 @@ import {
   StyleProp,
   ViewStyle,
 } from 'react-native';
-import {BellIcoon, MenuIcon} from '../../assets/icons/icons';
+import {
+  BellIcoon,
+  LeftIcon,
+  MenuIcon,
+  RingIcon,
+} from '../../assets/icons/icons';
+import {ROUTES} from '../../navigation/ROUTES';
 
 export interface HeaderComponentProps {
-  text: string;
+  text?: string;
   hasMenu?: boolean;
+  hasMenuOne?: boolean;
   style?: StyleProp<ViewStyle>;
 }
-const HeaderComponent = ({hasMenu=false,text}: HeaderComponentProps) => {
+const HeaderComponent = ({
+  hasMenu = false,
+  hasMenuOne = true,
+  text,
+}: HeaderComponentProps) => {
   const navigation = useNavigation();
   let toggleDrawer = () => {
     navigation.dispatch(DrawerActions.toggleDrawer());
   };
-    let onBackPress = () => {
-      navigation.goBack();
-    };
+  let onNotificationPress = () => {
+    navigation.navigate(ROUTES.NOTIFICATION);
+  };
+  let onBackPress = () => {
+    navigation.goBack();
+  };
   return (
     <View style={styles.headerContainer}>
-      <Image
-        source={require('../../assets/image/inkass2.png')}
-        style={styles.image}
-      />
+      {hasMenuOne ? (
+        <Image
+          source={require('../../assets/image/inkass2.png')}
+          style={styles.image}
+        />
+      ) : (
+        <TouchableOpacity onPress={onBackPress}>
+          <LeftIcon />
+        </TouchableOpacity>
+      )}
       <Text style={styles.text}>{text}</Text>
       {hasMenu ? (
-        <TouchableOpacity onPress={onBackPress}>
-          <BellIcoon />
-        </TouchableOpacity>
+        <Image
+          source={require('../../assets/image/inkass2.png')}
+          style={styles.image}
+        />
       ) : (
-        <TouchableOpacity onPress={toggleDrawer}>
-          <MenuIcon />
+        <TouchableOpacity onPress={onNotificationPress}>
+          <RingIcon />
         </TouchableOpacity>
       )}
     </View>

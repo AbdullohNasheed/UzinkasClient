@@ -6,23 +6,16 @@ import {
   StyleSheet,
   TouchableOpacity,
   View,
+  Text,
 } from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import {HomeIcon} from '../assets/icons/icons';
-import {CancelScreen} from '../screens/ cancel';
-import {ChoosingScreen} from '../screens/choosing';
-import {DataScreen} from '../screens/data';
 import {InformationScreen} from '../screens/information';
-import {PersonalScreen} from '../screens/personal';
+import {MyOrdersScreen} from '../screens/myOrders';
 import PersonalStack from '../screens/personal/hooks';
 import {ToOrderScreen} from '../screens/toOrder';
-import {VisitHistoryScreen} from '../screens/visitHistory';
-import HomeStack from './HomeStack';
-import OrderStack from './OrderStack';
-
 const img1 = require('../assets/image/Home.png');
 const img2 = require('../assets/image/Note.png');
 const img3 = require('../assets/image/user.png');
+const img4 = require('../assets/image/PancelBorder.png');
 
 const Tab = createBottomTabNavigator();
 interface CustomTabBarBottonProps {
@@ -33,120 +26,147 @@ const CustomTabBarBotton = ({
   children,
   onPress,
 }: PropsWithChildren<CustomTabBarBottonProps>) => (
-  <TouchableOpacity
-    style={{
-      top: Platform.OS === 'android' ? -35 : -25,
-      justifyContent: 'center',
-      alignItems: 'center',
-      ...styles.shadow,
-    }}
-    onPress={onPress}>
-    <View
-      style={{
-        width: Platform.OS === 'android' ? 80 : 93,
-        height: Platform.OS === 'android' ? 80 : 93,
-        borderRadius: 80,
-        backgroundColor: 'rgba(0, 152, 153, 1)',
-        elevation: 5,
-        shadowColor: 'rgba(0, 152, 153, 1)',
-        shadowRadius: 20,
-        shadowOpacity: 0.3,
-      }}>
-      {children}
-    </View>
-  </TouchableOpacity>
+  <TouchableOpacity onPress={onPress}></TouchableOpacity>
 );
 
 const Tabs = () => {
   return (
-      <Tab.Navigator
-        screenOptions={{
-          headerShown: false,
-          tabBarStyle: {
-            position: 'absolute',
-            height: 100,
-            borderTopLeftRadius: 30,
-            borderTopRightRadius: 30,
-            backgroundColor: '#181926',
-            borderTopWidth: 0,
-          },
-        }}>
-        <Tab.Screen
-          name="Home"
-          component={PersonalStack}
-          options={{
-            tabBarIcon: ({focused}) => (
-              <View
+    <Tab.Navigator
+      screenOptions={{
+        headerShown: false,
+        tabBarStyle: {
+          position: 'absolute',
+          borderTopLeftRadius: 30,
+          borderTopRightRadius: 30,
+          backgroundColor: '#181926',
+          borderTopWidth: 0,
+          paddingHorizontal: 15,
+          height: 80,
+        },
+      }}>
+      <Tab.Screen
+        name="Home"
+        component={PersonalStack}
+        options={{
+          tabBarIcon: ({focused}) => (
+            <View
+              style={{
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginTop: Platform.OS === 'android' ? 0 : 20,
+              }}>
+              <Image
+                source={img1}
+                resizeMode="contain"
                 style={{
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  top: Platform.OS === 'android' ? 0 : 10,
-                }}>
-                <Image
-                  source={img1}
-                  resizeMode="contain"
-                  style={{
-                    width: 40,
-                    height: 40,
-                    tintColor: focused
-                      ? 'rgba(0, 152, 153, 1)'
-                      : 'rgba(182, 182, 182, 1)',
-                  }}
-                />
-              </View>
-            ),
-            tabBarShowLabel: false,
-          }}
-        />
+                  width: 30,
+                  height: 30,
+                  tintColor: focused
+                    ? 'rgba(0, 152, 153, 1)'
+                    : 'rgba(182, 182, 182, 1)',
+                }}
+              />
+              <Text style={{color: '#98989b', fontSize: 15, marginTop: 3}}>
+                Главная
+              </Text>
+            </View>
+          ),
+          tabBarShowLabel: false,
+        }}
+      />
 
-        <Tab.Screen
-          name="Screen"
-          component={OrderStack}
-          options={{
-            tabBarIcon: ({focused}) => (
+      <Tab.Screen
+        name="order"
+        component={MyOrdersScreen}
+        options={{
+          tabBarIcon: ({focused}) => (
+            <View
+              style={{
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginTop: Platform.OS === 'android' ? 0 : 20,
+              }}>
               <Image
                 source={img2}
                 resizeMode="contain"
                 style={{
-                  width: 40,
-                  height: 40,
-                  tintColor: focused ? '#fff' : '#000',
+                  width: 30,
+                  height: 30,
+                  tintColor: focused
+                    ? 'rgba(0, 152, 153, 1)'
+                    : 'rgba(182, 182, 182, 1)',
                 }}
               />
-            ),
-            tabBarButton: props => <CustomTabBarBotton {...props} />,
-            tabBarShowLabel: false,
-          }}
-        />
-
-        <Tab.Screen
-          name="New"
-          component={InformationScreen}
-          options={{
-            tabBarIcon: ({focused}) => (
-              <View
+              <Text style={{color: '#98989b', fontSize: 15, marginTop: 3}}>
+                Заказы
+              </Text>
+            </View>
+          ),
+          tabBarShowLabel: false,
+        }}
+      />
+      <Tab.Screen
+        name="MyOrder"
+        component={ToOrderScreen}
+        options={{
+          tabBarIcon: ({focused}) => (
+            <View
+              style={{
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginTop: Platform.OS === 'android' ? 0 : 20,
+              }}>
+              <Image
+                source={img4}
+                resizeMode="contain"
                 style={{
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}>
-                <Image
-                  source={img3}
-                  resizeMode="contain"
-                  style={{
-                    width: 40,
-                    height: 40,
-                    tintColor: focused
-                      ? 'rgba(0, 152, 153, 1)'
-                      : 'rgba(182, 182, 182, 1)',
-                    top: Platform.OS === 'android' ? 0 : 10,
-                  }}
-                />
-              </View>
-            ),
-            tabBarShowLabel: false,
-          }}
-        />
-      </Tab.Navigator>
+                  width: 30,
+                  height: 30,
+                  tintColor: focused
+                    ? 'rgba(0, 152, 153, 1)'
+                    : 'rgba(182, 182, 182, 1)',
+                }}
+              />
+              <Text style={{color: '#98989b', fontSize: 15, marginTop: 3}}>
+                Заказать
+              </Text>
+            </View>
+          ),
+          tabBarShowLabel: false,
+        }}
+      />
+      <Tab.Screen
+        name="Newww"
+        component={InformationScreen}
+        options={{
+          tabBarIcon: ({focused}) => (
+            <View
+              style={{
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginTop: Platform.OS === 'android' ? 0 : 20,
+              }}>
+              <Image
+                source={img3}
+                resizeMode="contain"
+                style={{
+                  width: 30,
+                  height: 30,
+                  tintColor: focused
+                    ? 'rgba(0, 152, 153, 1)'
+                    : 'rgba(182, 182, 182, 1)',
+                }}
+              />
+              <Text style={{color: '#98989b', fontSize: 15, marginTop: 3}}>
+                Профиль
+              </Text>
+            </View>
+          ),
+          tabBarShowLabel: false,
+          tabBarHideOnKeyboard: true,
+        }}
+      />
+    </Tab.Navigator>
   );
 };
 export default Tabs;

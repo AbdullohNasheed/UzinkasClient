@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
 	},
 	buttonBox: {
 		borderWidth: 1,
-		height: 60,
+		height: 50,
 		alignContent: 'center',
 		justifyContent: 'center',
 		borderColor: "rgba(0, 152, 153, 1)",

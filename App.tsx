@@ -11,6 +11,9 @@ try {
   console.log(e);
 }
 let {persistor, store} = configureStore();
+
+export type RootState = ReturnType<typeof store.getState>;
+
 export {store};
 const App = () => {
   return (

@@ -1,9 +1,10 @@
+import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { StyleSheet } from "react-native";
 import DrawerPage from "../components/drawer/drawer";
-import { InformationScreen } from "../screens/information";
-import PersonalStack from "../screens/personal/hooks";
-import OrderStack from "./OrderStack";
+import { ROUTES } from "./ROUTES";
+import Tabs from "./Tab";
+import { PinCodScreen } from "../screens/pincod";
 
 const Drawer = createDrawerNavigator();
 
@@ -13,16 +14,15 @@ const DrawerNavigator = () => {
       drawerContent={() => <DrawerPage />}
       screenOptions={{
         headerShown: false,
-        drawerPosition: 'right',
+        drawerPosition: 'left',
         drawerStyle: {
           flex: 1,
-          backgroundColor: '#F5FDFF',
+          backgroundColor: 'rgba(38, 39, 50, 1)',
         },
         drawerType: 'front',
       }}>
-      <Drawer.Screen component={PersonalStack} name="Home" />
-      <Drawer.Screen component={OrderStack} name="Screen" />
-      <Drawer.Screen component={InformationScreen} name="New" />
+      <Drawer.Screen name={ROUTES.HOME_TABS} component={Tabs} />
+      <Drawer.Screen name={ROUTES.PINCODE} component={PinCodScreen} />
     </Drawer.Navigator>
   );
 };

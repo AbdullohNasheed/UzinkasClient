@@ -91,17 +91,46 @@ export const styles = StyleSheet.create({
     color: '#rgba(0, 152, 153, 1)',
     marginTop: 10,
   },
-  imageContainer:{
-      alignItems: 'center',
-      paddingTop: 20,
+  imageContainer: {
+    alignItems: 'center',
+    paddingTop: 20,
   },
-  image:{
+  image: {
     borderRadius: 5,
-      width: 160,
-      height: 160,
-      alignItems: 'center',
-      justifyContent: 'center',
-      backgroundColor: '#fff',
-      marginBottom: 10,
+    width: 160,
+    height: 160,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#fff',
+    marginBottom: 10,
+  },
+  modalContainer: {
+    justifyContent: 'center',
+    backgroundColor: '#242531',
+    marginHorizontal: 40,
+    height: 200,
+    borderRadius: 10,
+  },
+  modalBox: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginHorizontal: 40,
+  },
+  modalTextOne: {
+    marginHorizontal: 10,
+    fontSize:18,
+    fontWeight: 'bold',
+    color: '#009899',
+    textAlign: 'center',
+  },
+  modalTextTwo: {
+    fontSize: 18,
+    fontWeight: '500',
+    color: '#009899',
+  },
+  modalTextThree: {
+    color: '#A92F2F',
+    fontSize: 18,
+    fontWeight: '500',
   },
 });

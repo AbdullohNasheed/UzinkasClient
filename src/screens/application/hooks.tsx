@@ -4,8 +4,10 @@ import {useDispatch} from 'react-redux';
 import {requests} from '../../api/requests';
 import {PartnerRequest} from '../../api/types';
 import {ROUTES} from '../../navigation/ROUTES';
+import {useFocusEffect, useRoute} from '@react-navigation/native';
 
 export const useApplicationScreenHook = () => {
+  const [active, setActive] = useState(false);
   const [partner, setPartner] = useState<PartnerRequest>({
     customer_name: '',
     email: '',
@@ -13,6 +15,7 @@ export const useApplicationScreenHook = () => {
     name_organization: '',
   });
   const navigation = useNavigation();
+  const route = useRoute();
   const effect = async () => {
     try {
       let res = await requests.partner.creatPartner(partner);
@@ -31,5 +34,10 @@ export const useApplicationScreenHook = () => {
   const onSendPress = () => {
     effect();
   };
-  return {partner, onFillPress, onSendPress, handleChange};
+  useFocusEffect(() => {
+    if(route.params && route.params.nimadir){
+      setActive(true);
+    }
+  });
+  return {partner, onFillPress, onSendPress, handleChange, active};
 };

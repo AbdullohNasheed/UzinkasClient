@@ -1,3 +1,4 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {useEffect, useState} from 'react';
 import {
   View,
@@ -8,14 +9,14 @@ import {
   Dimensions,
   TouchableOpacityBase,
   FlatList,
+  LayoutAnimation,
 } from 'react-native';
-import {ActivityIndicator, Modal} from 'react-native-paper';
-import {MyOrdersScreen} from '.';
+import {ActivityIndicator} from 'react-native-paper';
+import {DataWhiteIcon} from '../../assets/icons/icons';
+import CalendarBox from '../../components/header/Calaendar';
 import HeaderComponent from '../../components/header/Header';
 import {ActiveBoxScreen} from './components/activeBox';
-import {MyOrderScreen} from './components/activeBox/components/myOrder';
 import {HistoryBoxScreen} from './components/historyBox';
-import {HistoryViewScreen} from './components/historyBox/components/history';
 import {HistoryButtonBoxScreen} from './components/historyBox/components/historyButton';
 import {useActiveData, useHistoryData} from './hooks';
 import {styles} from './style';
@@ -23,8 +24,13 @@ import {styles} from './style';
 const {width} = Dimensions.get('window');
 
 export function MyOrdersView() {
+  let navigation = useNavigation();
+  // const onCalendarPress = () => {
+  //   navigation.navigate(ROUTES.);
+  // };
   const {order, loading} = useActiveData();
   const {orderHistory, loadingOne} = useHistoryData();
+  const [animated, setAnimated] = useState(true);
 
   const [state, setState] = useState({
     active: 0,
@@ -90,7 +96,7 @@ export function MyOrdersView() {
   return (
     <View style={{flex: 1, backgroundColor: 'rgba(36, 37, 49, 1)'}}>
       <View style={styles.headerBox}>
-        <HeaderComponent  text={'Мои заказы'} />
+        <HeaderComponent hasMenuOne={false} text={'Мои заказы'} />
       </View>
       <View style={styles.container}>
         <Animated.View
@@ -177,6 +183,31 @@ export function MyOrdersView() {
                   color="rgba(0, 152, 153, 1)"
                 />
               )}
+              <TouchableOpacity
+                style={styles.dataBox}
+                onPress={() => {
+                  LayoutAnimation.configureNext(
+                    LayoutAnimation.Presets.easeInEaseOut,
+                  );
+                  setAnimated(!animated);
+                }}>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                  }}>
+                  <Text
+                    style={{fontSize: 18, fontWeight: 'bold', color: '#fff'}}>
+                    Выбрать дату
+                  </Text>
+                  <DataWhiteIcon />
+                </View>
+                {!animated ? (
+                  <View style={{}}>
+                    <CalendarBox />
+                  </View>
+                ) : null}
+              </TouchableOpacity>
               {orderHistory?.map(e => {
                 return <HistoryButtonBoxScreen orderHistory={e} />;
               })}

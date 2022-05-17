@@ -15,19 +15,24 @@ export interface DefaultButtonProps {
   onPress?: any;
   style?: StyleProp<ViewStyle>;
   textStyle?: StyleProp<TextStyle>;
+  inActive?: boolean;
 }
 
 const DefaultButton = ({
   text,
   style,
   textStyle,
+  inActive,
   onPress = () => {},
 }: DefaultButtonProps) => {
   //   let containerStyle = styles.lightContainerStyle;
   //   let textStyle = styles.lightText;
 
   return (
-    <TouchableOpacity style={[styles.buttonContainer, style]} onPress={onPress}>
+    <TouchableOpacity
+      disabled={inActive}
+      style={[styles.buttonContainer, style]}
+      onPress={onPress}>
       <Text style={[styles.buttonText, textStyle]}>{text}</Text>
     </TouchableOpacity>
   );
@@ -42,11 +47,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 1.5,
-    borderColor: ' rgba(0, 152, 153, 1)',
     marginVertical: 15,
+    paddingVertical: 13,
+    borderColor: ' rgba(0, 152, 153, 1)',
   },
   buttonText: {
-    marginVertical: 18,
     fontSize: 18,
     color: 'rgba(0, 152, 153, 1)',
     fontWeight: 'bold',

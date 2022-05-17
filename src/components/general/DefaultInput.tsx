@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     // backgroundColor: 'red',
     fontSize: 19,
     width: '82%',
-    marginVertical: Platform.OS === 'ios' ? 20 : 6,
+    marginVertical: 7,
     color: '#fff',
   },
   inputContainer: {

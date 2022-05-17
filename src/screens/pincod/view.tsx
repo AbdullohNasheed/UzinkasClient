@@ -1,5 +1,5 @@
-import { useNavigation } from '@react-navigation/native';
-import React, { useEffect, useState } from 'react';
+import {useNavigation, useRoute} from '@react-navigation/native';
+import React, {useEffect, useState} from 'react';
 import {
   View,
   Text,
@@ -11,21 +11,23 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {EggIcon, PassIcon} from '../../assets/icons/icons';
+import DrawerPage from '../../components/drawer/drawer';
 import DefaultImageBackground from '../../components/general/DefaultImageBackground';
-import { ROUTES } from '../../navigation/ROUTES';
+import {ROUTES} from '../../navigation/ROUTES';
 import {useTabsScreenHook} from './hooks';
 import {styles} from './style';
 const PinCodview = () => {
   const [passcode, setPasscode] = useState('');
   const navigation = useNavigation();
-
+  const route = useRoute();
+  console.log(route);
   const onNumberPress = (num: number) => {
-    if (passcode.length <= 3) {
+    if (passcode.length <= 4) {
       setPasscode(passcode + num);
     }
   };
   useEffect(() => {
-    if (passcode.length === 3) {
+    if (passcode.length === 4) {
       navigation.navigate(ROUTES.HOME_TABS);
     }
   }, [passcode]);

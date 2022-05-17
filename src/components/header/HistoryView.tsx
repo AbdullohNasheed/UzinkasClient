@@ -1,6 +1,7 @@
-import { View, Text, StyleSheet, Image } from 'react-native'
-import React from 'react'
-import { statuses } from '../../screens/myOrders/components/activeBox/components/myOrder/view';
+import {View, Text, StyleSheet, Image} from 'react-native';
+import React from 'react';
+import {statuses} from '../../screens/myOrders/components/activeBox/components/myOrder/view';
+import {normalizePrice} from '../../utils/string';
 
 const History = ({orderHistory}) => {
   return (
@@ -33,7 +34,9 @@ const History = ({orderHistory}) => {
       </View>
       <View style={styles.boxTwo}>
         <Text style={styles.textName}>Сумма</Text>
-        <Text style={styles.textNumber}>{orderHistory?.amount}</Text>
+        <Text style={styles.textNumber}>
+          {normalizePrice(orderHistory?.amount)}
+        </Text>
       </View>
       <View style={styles.one}>
         <View style={styles.flexTwo}>
@@ -43,18 +46,22 @@ const History = ({orderHistory}) => {
           <View style={styles.historyBoxOne}>
             <View style={styles.box}>
               <Text style={styles.textThree}>Катьий</Text>
-              <Text style={styles.textOne}>100 000</Text>
+              <Text style={styles.textOne}>
+                {normalizePrice('50000000000')}
+              </Text>
             </View>
             <View style={styles.box}>
               <Text style={styles.textThree}>%</Text>
-              <Text style={styles.textOne}>66 500</Text>
+              <Text style={styles.textOne}>{normalizePrice('66500')}</Text>
             </View>
           </View>
         </View>
       </View>
       <View style={styles.boxTwo}>
         <Text style={styles.textName}>Тулов суммаси</Text>
-        <Text style={styles.textNumber}>100 000</Text>
+        <Text style={styles.textNumber}>
+          {normalizePrice(orderHistory?.amount)}
+        </Text>
       </View>
       <View style={styles.boxTwo}>
         <Text style={styles.text}>Инкассатор</Text>
@@ -70,10 +77,12 @@ const History = ({orderHistory}) => {
   );
 };
 
-export default History
+export default History;
 
 const styles = StyleSheet.create({
   container: {
+    borderWidth: 2,
+    borderColor: '#rgba(0, 152, 153, 1)',
     paddingVertical: 15,
     borderRadius: 10,
     marginVertical: 20,
@@ -111,14 +120,14 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   textOne: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: 'bold',
     color: '#fff',
   },
   textTwo: {
     color: '#rgba(0, 152, 153, 1)',
     fontWeight: 'bold',
-    fontSize: 20,
+    fontSize: 18,
   },
   textThree: {
     fontSize: 16,

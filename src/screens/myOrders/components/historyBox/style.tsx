@@ -28,6 +28,6 @@ export const styles = StyleSheet.create({
     borderRadius: 10,
   },
   buttonContainer: {
-    marginTop: 180,
+    marginTop: 20,
   },
 });

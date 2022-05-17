@@ -12,28 +12,29 @@ import {
   ClockIcon,
   GoldIcon,
   KalendarMiniIcon,
+  MishokIcon,
   MonyIcon,
 } from '../../assets/icons/icons';
 import DefaultButton from '../../components/general/DefaultButton';
 import InputBlack from '../../components/general/InputBlack';
 import HeaderComponent from '../../components/header/Header';
-import {useQrKodScreenHook} from '../orderAccording/hooks';
+import {useQrKodScreenHook} from './hooks';
 import {styles} from './style';
 const Additionalview = () => {
-  const {onQrKodPress, handleChange, state, error, removeError} =
+  const {onQrKodPress, handleChange, state, error, removeError, link} =
     useQrKodScreenHook();
-  const {width} = useWindowDimensions();
   return (
     <SafeAreaView style={styles.container}>
-      <HeaderComponent text={'Доп.визит'} />
+      <HeaderComponent hasMenu={false} hasMenuOne={false} text={'Доп.визит'} />
       <View style={styles.errorBox}>
         <Snackbar
           style={{
-            borderRadius: 12,
             backgroundColor: 'red',
             height: '100%',
             width: '100%',
+            borderRadius: 10,
             alignSelf: 'center',
+            justifyContent: 'center',
           }}
           onDismiss={removeError}
           visible={!!error}>
@@ -69,7 +70,7 @@ const Additionalview = () => {
             <InputBlack
               value={state.bag}
               onChange={handleChange('bag')}
-              icon={CircleIcon}
+              icon={MishokIcon}
               placeholder={'Код'}
             />
             <View style={styles.textBox}>
@@ -77,7 +78,7 @@ const Additionalview = () => {
               <Text style={styles.textTwo}>1.000.000</Text>
             </View>
           </View>
-          <DefaultButton onPress={onQrKodPress} text={'Генерация QR-кода'} />
+          <DefaultButton onPress={link} text={'Генерация QR-кода'} />
         </View>
       </ScrollView>
     </SafeAreaView>

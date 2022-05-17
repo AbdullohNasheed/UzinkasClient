@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native';
 export const styles = StyleSheet.create({
   container: {
     marginHorizontal: 20,
-    backgroundColor: '#rgba(38, 39, 50, 1)',
+    backgroundColor: '#2b2c36',
     paddingHorizontal: 10,
     paddingVertical: 20,
     marginVertical: 10,
@@ -46,17 +46,17 @@ export const styles = StyleSheet.create({
     width: 50,
     height: 50,
     alignItems: 'center',
-    justifyContent:'center',
+    justifyContent: 'center',
     backgroundColor: '#fff',
     marginHorizontal: 15,
   },
   textOne: {
-    fontSize: 20,
+    fontSize: 18,
     color: '#fff',
     fontWeight: 'bold',
   },
   textTwo: {
-    fontSize: 20,
+    fontSize: 18,
     color: '#rgba(0, 152, 153, 1)',
     fontWeight: 'bold',
     marginLeft: 5,

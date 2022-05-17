@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
     marginHorizontal: 20,
     marginVertical: 10,
     // paddingVertical: 15,
-    backgroundColor: '#rgba(38, 39, 50, 1)',
+    backgroundColor: '#2b2c36',
     borderRadius: 10,
     shadowColor: '#000',
     shadowOffset: {
@@ -43,5 +43,22 @@ export const styles = StyleSheet.create({
   },
   scrollContainer: {
     flex: 1,
+  },
+  dataBox: {
+    marginHorizontal: 20,
+    backgroundColor: '#2b2c36',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+
+    elevation: 6,
+    justifyContent: 'space-between',
+    paddingHorizontal: 20,
+    paddingVertical: 15,
+    borderRadius: 10,
   },
 });

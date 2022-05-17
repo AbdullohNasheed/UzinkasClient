@@ -4,16 +4,16 @@ import {Image} from 'react-native-svg';
 import {MenuIcon, TrackIcon, TrackTwoIcon} from '../../assets/icons/icons';
 import DefaultButton from '../../components/general/DefaultButton';
 import HeaderComponent from '../../components/header/Header';
-import {usesOrderScreenHook, useToOrderScreenHook} from './hooks';
+import {usesOrderScreenHook} from './hooks';
 import {styles} from './style';
-let {onOrderPress, onAdditionalPress} = usesOrderScreenHook();
 const ToOrderview = () => {
-  console.log('toDoOrderView')
+  let {onOrderPress, onAdditionalPress} = usesOrderScreenHook();
   return (
     <SafeAreaView style={styles.container}>
-      <HeaderComponent text={'Заказать'} />
+      <HeaderComponent hasMenu hasMenuOne={false} text={'Заказать'} />
       <View style={styles.toOrderContainer}>
-        <View style={{alignItems: 'center', flex: 0.7, justifyContent: 'center',}}>
+        <View
+          style={{alignItems: 'center', flex: 0.7, justifyContent: 'center'}}>
           <View style={styles.trackBox}>
             <TrackTwoIcon style={styles.icon} />
           </View>

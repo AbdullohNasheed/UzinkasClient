@@ -15,6 +15,10 @@ import {QrKodScreen} from '../screens/qrKod';
 import {DataScreen} from '../screens/data';
 import {useDispatch, useSelector} from 'react-redux';
 import {selectUser, userLoggedOut} from '../store/slices/userSlice';
+import {Drawer} from 'react-native-paper';
+import DrawerNavigator from './DrawerNavigator';
+import QrKodViewOne from '../screens/qrKodOne.tsx/view';
+import {QrKodOneScreen} from '../screens/qrKodOne.tsx';
 // import { MyOrderScreen } from '../screens/myOrders';
 
 const Stack = createNativeStackNavigator();
@@ -40,13 +44,13 @@ const AuthStack = () => {
             component={ApplicationFromScreen}
           />
           <Stack.Screen name={ROUTES.REGISTER} component={RegisterScreen} />
-          <Stack.Screen name={ROUTES.PINCODE} component={PinCodScreen} />
           <Stack.Screen name={ROUTES.LOGIN} component={LoginScreen} />
         </>
       ) : (
         <>
-          <Stack.Screen name={ROUTES.HOME_TABS} component={Tabs} />
+          <Stack.Screen name={ROUTES.HOME_TABS} component={DrawerNavigator} />
           <Stack.Screen name={ROUTES.QRKOD} component={QrKodScreen} />
+          <Stack.Screen name={ROUTES.QRCODEONE} component={QrKodOneScreen} />
         </>
       )}
     </Stack.Navigator>

@@ -19,7 +19,9 @@ export const useQrKodScreenHook = () => {
     setState({...state, [key]: value});
   };
   let navigation = useNavigation();
-  // let order = useSelector(selectOrder);
+  const link = () => {
+    navigation.navigate(ROUTES.QRKOD);
+  };
   let onQrKodPress = async () => {
     try {
       let res = await requests.order.createOrder(state);
@@ -40,5 +42,5 @@ export const useQrKodScreenHook = () => {
     setError('');
   };
 
-  return {onQrKodPress, state, handleChange, error, removeError};
+  return {onQrKodPress, state, handleChange, error, removeError, link};
 };

@@ -10,18 +10,17 @@ import DefaultButton from '../../components/general/DefaultButton';
 import DefaultInput from '../../components/general/DefaultInput';
 import InputBlack from '../../components/general/InputBlack';
 import HeaderComponent from '../../components/header/Header';
-import {useQrKodScreenHook} from './hooks';
+import {useQrKodScreenOneHook} from './hooks';
 import {styles} from './style';
 import {Snackbar} from 'react-native-paper';
-import { ScrollView } from 'react-native-gesture-handler';
+import {ScrollView} from 'react-native-gesture-handler';
 
 const OrderAccordingView = () => {
-  const {onQrKodPress, handleChange, state, error, removeError} =
-    useQrKodScreenHook();
-  const {width} = useWindowDimensions();
+  const {error, handleChange, link, onQrKodOnePress, removeError, state} =
+    useQrKodScreenOneHook();
   return (
     <SafeAreaView style={styles.container}>
-      <HeaderComponent text={'Заказать по плану'} />
+      <HeaderComponent hasMenu hasMenuOne={false} text={'Заказать по плану'} />
       <View style={styles.errorBox}>
         <Snackbar
           style={{
@@ -44,7 +43,7 @@ const OrderAccordingView = () => {
             value={state.date}
             onChange={handleChange('date')}
             icon={KalendarMiniIcon}
-            placeholder="Дата"
+            placeholder="01.12"
           />
           <Text style={styles.text}>Сумма денег, подлежающая перечислению</Text>
           <InputBlack
@@ -61,7 +60,7 @@ const OrderAccordingView = () => {
             placeholder={'Код'}
           />
           <View style={styles.bottonBox}>
-            <DefaultButton onPress={onQrKodPress} text={'Генерация QR-кода'} />
+            <DefaultButton onPress={link} text={'Генерация QR-кода'} />
           </View>
         </View>
       </ScrollView>

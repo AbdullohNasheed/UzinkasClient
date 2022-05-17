@@ -16,11 +16,11 @@ export const useContractScreenData = () => {
   const navigation = useNavigation();
   const effect = async () => {
     try {
-      setLoading(true)
+      setLoading(true);
       let res = await requests.questionnaire.createQuestionnaire(send);
-      navigation.navigate(ROUTES.APPLICATION, {send});
+      navigation.navigate(ROUTES.APPLICATION, {send, nimadir: true});
       console.log(res.data);
-      setLoading(false)
+      setLoading(false);
     } catch (error) {
       console.error(error);
     }
@@ -31,5 +31,5 @@ export const useContractScreenData = () => {
   const onSavePress = () => {
     effect();
   };
-  return {send, handleChange, onSavePress, loading };
+  return {send, handleChange, onSavePress, loading};
 };

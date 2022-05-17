@@ -89,7 +89,7 @@ const LoginView = () => {
               onPress={onRegisterPress}
               style={styles.buttonBox}>
               {loading ? (
-                <ActivityIndicator size={'large'} color={'white'} />
+                <ActivityIndicator size={'small'} color={'white'} />
               ) : (
                 <Text style={styles.buttonText}>Войти</Text>
               )}

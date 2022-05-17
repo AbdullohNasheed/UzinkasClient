@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
     flex: 1,
   },
   box: {
-    backgroundColor: '#262732',
+    backgroundColor: '#2b2c36',
     marginHorizontal: 20,
     borderRadius: 10,
     flexDirection: 'row',
@@ -27,6 +27,23 @@ export const styles = StyleSheet.create({
     elevation: 9,
     marginVertical: 10,
   },
+  boxx: {
+    backgroundColor: '#262732',
+    marginHorizontal: 20,
+    borderRadius: 10,
+    paddingVertical: 10,
+    marginVertical: 10,
+    borderWidth: 2,
+    borderColor: '#009899',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.32,
+    shadowRadius: 5.46,
+    elevation: 9,
+  },
   boxOne: {
     flex: 1.2,
     alignItems: 'center',
@@ -38,6 +55,13 @@ export const styles = StyleSheet.create({
   text: {
     fontSize: 20,
     color: '#fff',
-    width: '90%',
+    width: '70%',
+  },
+  textOne: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    lineHeight: 30,
+    color: '#fff',
   },
 });

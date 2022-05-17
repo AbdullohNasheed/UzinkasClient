@@ -1,8 +1,10 @@
 import {View, Text, Image, TouchableOpacity, Linking} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import {styles} from './style';
 import DefaultButton from '../../../../../../components/general/DefaultButton';
 import QRCode from 'react-native-qrcode-svg';
+import ReactNativeModal from 'react-native-modal';
+import {normalizePrice} from '../../../../../../utils/string';
 
 export let statuses = {
   '0': ' Новая заявка',
@@ -12,6 +14,10 @@ export let statuses = {
 };
 let phone = 998595937;
 const MyOrderView = ({order}) => {
+  const [modalVisible, setModalVisible] = useState(false);
+  const toggleDispatchTextModal = () => {
+    setModalVisible(true);
+  };
   return (
     <>
       <View style={styles.container}>
@@ -43,7 +49,7 @@ const MyOrderView = ({order}) => {
         </View>
         <View style={styles.boxTwo}>
           <Text style={styles.textName}>Сумма</Text>
-          <Text style={styles.textNumber}>{order?.amount}</Text>
+          <Text style={styles.textNumber}>{normalizePrice(order?.amount)}</Text>
         </View>
         <View style={styles.one}>
           <View style={styles.flexTwo}>
@@ -53,18 +59,18 @@ const MyOrderView = ({order}) => {
             <View style={styles.historyBoxOne}>
               <View style={styles.box}>
                 <Text style={styles.textThree}>Катьий</Text>
-                <Text style={styles.textOne}>100 000</Text>
+                <Text style={styles.textOne}>{normalizePrice('100000')}</Text>
               </View>
               <View style={styles.box}>
                 <Text style={styles.textThree}>%</Text>
-                <Text style={styles.textOne}>66 500</Text>
+                <Text style={styles.textOne}>{normalizePrice('66500')}</Text>
               </View>
             </View>
           </View>
         </View>
         <View style={styles.boxTwo}>
           <Text style={styles.textName}>Тулов суммаси</Text>
-          <Text style={styles.textNumber}>100 000</Text>
+          <Text style={styles.textNumber}>{normalizePrice(order?.amount)}</Text>
         </View>
         <View style={styles.boxTwo}>
           <Text style={styles.text}>Инкассатор</Text>
@@ -83,6 +89,29 @@ const MyOrderView = ({order}) => {
           }}
           text={'Позвонить инкассатору'}
         />
+        <DefaultButton text="Отмена" onPress={setModalVisible} />
+        <ReactNativeModal
+          backdropOpacity={0.5}
+          onBackdropPress={() => setModalVisible(false)}
+          isVisible={modalVisible}>
+          <View style={styles.modalContainer}>
+            <View style={{height: '50%', justifyContent: 'space-between'}}>
+              <View style={{alignItems: 'center'}}>
+                <Text style={styles.modalTextOne}>
+                  Вы уверены, что хотите отменить заказ?
+                </Text>
+              </View>
+              <View style={styles.modalBox}>
+                <TouchableOpacity>
+                  <Text style={styles.modalTextTwo}>Да</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => setModalVisible(false)}>
+                  <Text style={styles.modalTextThree}>Нет</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+          </View>
+        </ReactNativeModal>
       </View>
     </>
   );

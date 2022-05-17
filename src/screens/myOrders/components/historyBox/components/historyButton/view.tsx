@@ -8,9 +8,6 @@ import {
 } from 'react-native';
 import React, {useState} from 'react';
 import {styles} from './style';
-import Modal from 'react-native-modal';
-import {Button} from 'react-native-paper';
-import {HomeScreen} from '../../../../../home';
 import {HistoryViewScreen} from '../history';
 import {statuses} from '../../../activeBox/components/myOrder/view';
 import QRCode from 'react-native-qrcode-svg';

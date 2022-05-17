@@ -4,11 +4,14 @@ import React from 'react';
 import {ROUTES} from '../../navigation/ROUTES';
 export const useKodScreenHook = () => {
   let navigation = useNavigation();
-  let onCenceelonPress = () => {
-    navigation.navigate(ROUTES.HOME_TABS);
+  const onOrderAdditionalPress = () => {
+    navigation.navigate(ROUTES.ORDERADITIONAL);
+  };
+  const onBackPress = () => {
+    navigation.goBack();
   };
 
-  return {onCenceelonPress};
+  return {onBackPress, onOrderAdditionalPress};
 };
 
 // };

@@ -3,9 +3,10 @@ import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {store} from '../../../App';
 import {useSelector} from 'react-redux';
 
-let initialState: LoginResponse = {
+let initialState: LoginResponse & {pinCode: string} = {
   token: '',
   user: undefined,
+  pinCode: '',
 };
 
 const userSlice = createSlice({
@@ -13,10 +14,16 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     userLoggedIn: (state, action: PayloadAction<LoginResponse>) => {
-      return action.payload;
+      return {...action.payload, pinCode: ''};
     },
     userLoggedOut: () => {
       return initialState;
+    },
+    setUpPinCode: (state, action: PayloadAction<string>) => {
+      return {...state, pinCode: action.payload};
+    },
+    removePinCode: state => {
+      return {...state, pinCode: ''};
     },
   },
 });

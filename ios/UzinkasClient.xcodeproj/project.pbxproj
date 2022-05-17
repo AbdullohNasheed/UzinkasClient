@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* UzinkasClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* UzinkasClientTests.m */; };
-		0DEF86B678A5EA7B1CD95E86 /* libPods-UzinkasClient-UzinkasClientTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5AF1C3785A2C35BDEAC3A5 /* libPods-UzinkasClient-UzinkasClientTests.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2F84405628A4FAD7DB692B9C /* libPods-UzinkasClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80A2B4B6F9E70C15A0E77791 /* libPods-UzinkasClient.a */; };
+		36A96386508B6BA064F23D41 /* libPods-UzinkasClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 86BE8418CF2906D444D71508 /* libPods-UzinkasClient.a */; };
+		3EDE0E0BFC26BED2954A82DB /* libPods-UzinkasClient-UzinkasClientTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C1A71888D4B711909E03145 /* libPods-UzinkasClient-UzinkasClientTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -36,13 +36,13 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = UzinkasClient/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = UzinkasClient/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = UzinkasClient/main.m; sourceTree = "<group>"; };
-		2D5AF1C3785A2C35BDEAC3A5 /* libPods-UzinkasClient-UzinkasClientTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UzinkasClient-UzinkasClientTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		80A2B4B6F9E70C15A0E77791 /* libPods-UzinkasClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UzinkasClient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DB364A134212D369480A9C3 /* Pods-UzinkasClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UzinkasClient.debug.xcconfig"; path = "Target Support Files/Pods-UzinkasClient/Pods-UzinkasClient.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = UzinkasClient/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8B1C884FAEDADA1A1F533B44 /* Pods-UzinkasClient-UzinkasClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UzinkasClient-UzinkasClientTests.release.xcconfig"; path = "Target Support Files/Pods-UzinkasClient-UzinkasClientTests/Pods-UzinkasClient-UzinkasClientTests.release.xcconfig"; sourceTree = "<group>"; };
-		B71E6288FA9FCDDFD31052BE /* Pods-UzinkasClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UzinkasClient.debug.xcconfig"; path = "Target Support Files/Pods-UzinkasClient/Pods-UzinkasClient.debug.xcconfig"; sourceTree = "<group>"; };
-		B783878DB03E7F35E0B2042B /* Pods-UzinkasClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UzinkasClient.release.xcconfig"; path = "Target Support Files/Pods-UzinkasClient/Pods-UzinkasClient.release.xcconfig"; sourceTree = "<group>"; };
-		CE83AF165E19FD82723BB3B4 /* Pods-UzinkasClient-UzinkasClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UzinkasClient-UzinkasClientTests.debug.xcconfig"; path = "Target Support Files/Pods-UzinkasClient-UzinkasClientTests/Pods-UzinkasClient-UzinkasClientTests.debug.xcconfig"; sourceTree = "<group>"; };
+		86BE8418CF2906D444D71508 /* libPods-UzinkasClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UzinkasClient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		899C70368E1B2E83F167C951 /* Pods-UzinkasClient-UzinkasClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UzinkasClient-UzinkasClientTests.debug.xcconfig"; path = "Target Support Files/Pods-UzinkasClient-UzinkasClientTests/Pods-UzinkasClient-UzinkasClientTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8C1A71888D4B711909E03145 /* libPods-UzinkasClient-UzinkasClientTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UzinkasClient-UzinkasClientTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEE2C7208D0DA3D8E0A2E6C1 /* Pods-UzinkasClient-UzinkasClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UzinkasClient-UzinkasClientTests.release.xcconfig"; path = "Target Support Files/Pods-UzinkasClient-UzinkasClientTests/Pods-UzinkasClient-UzinkasClientTests.release.xcconfig"; sourceTree = "<group>"; };
+		EA976DE14EF3523EE5FFCB0C /* Pods-UzinkasClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UzinkasClient.release.xcconfig"; path = "Target Support Files/Pods-UzinkasClient/Pods-UzinkasClient.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -51,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DEF86B678A5EA7B1CD95E86 /* libPods-UzinkasClient-UzinkasClientTests.a in Frameworks */,
+				3EDE0E0BFC26BED2954A82DB /* libPods-UzinkasClient-UzinkasClientTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F84405628A4FAD7DB692B9C /* libPods-UzinkasClient.a in Frameworks */,
+				36A96386508B6BA064F23D41 /* libPods-UzinkasClient.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,8 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				80A2B4B6F9E70C15A0E77791 /* libPods-UzinkasClient.a */,
-				2D5AF1C3785A2C35BDEAC3A5 /* libPods-UzinkasClient-UzinkasClientTests.a */,
+				86BE8418CF2906D444D71508 /* libPods-UzinkasClient.a */,
+				8C1A71888D4B711909E03145 /* libPods-UzinkasClient-UzinkasClientTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -121,7 +121,7 @@
 				00E356EF1AD99517003FC87E /* UzinkasClientTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				C695091BEE8868F26BF2E8C9 /* Pods */,
+				A189F7F1282B0B14F7F49E14 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -137,13 +137,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C695091BEE8868F26BF2E8C9 /* Pods */ = {
+		A189F7F1282B0B14F7F49E14 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B71E6288FA9FCDDFD31052BE /* Pods-UzinkasClient.debug.xcconfig */,
-				B783878DB03E7F35E0B2042B /* Pods-UzinkasClient.release.xcconfig */,
-				CE83AF165E19FD82723BB3B4 /* Pods-UzinkasClient-UzinkasClientTests.debug.xcconfig */,
-				8B1C884FAEDADA1A1F533B44 /* Pods-UzinkasClient-UzinkasClientTests.release.xcconfig */,
+				7DB364A134212D369480A9C3 /* Pods-UzinkasClient.debug.xcconfig */,
+				EA976DE14EF3523EE5FFCB0C /* Pods-UzinkasClient.release.xcconfig */,
+				899C70368E1B2E83F167C951 /* Pods-UzinkasClient-UzinkasClientTests.debug.xcconfig */,
+				CEE2C7208D0DA3D8E0A2E6C1 /* Pods-UzinkasClient-UzinkasClientTests.release.xcconfig */,
 			);
 			name = Pods;
 			path = Pods;
@@ -156,12 +156,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "UzinkasClientTests" */;
 			buildPhases = (
-				21E46649FCA6BE749C5007A8 /* [CP] Check Pods Manifest.lock */,
+				402CB85C743CA4EE87B0265E /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				DEB17017AE4E08D8CE64B6AD /* [CP] Embed Pods Frameworks */,
-				5C9A011B037583769B442831 /* [CP] Copy Pods Resources */,
+				926C3D6C1BFC8B24470B4F1B /* [CP] Embed Pods Frameworks */,
+				D66A482EEA2C7B8D5B98A939 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -177,14 +177,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "UzinkasClient" */;
 			buildPhases = (
-				10E08327D772523AD4896C5F /* [CP] Check Pods Manifest.lock */,
+				990F32CBF28F79645B8638BB /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				7BD41878071E46F88640D50C /* [CP] Embed Pods Frameworks */,
-				76E6C283B9F69A4588915B88 /* [CP] Copy Pods Resources */,
+				76AD86E6D4C3049B887A034D /* [CP] Embed Pods Frameworks */,
+				CD3F86366DAB55FD0B785763 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -265,29 +265,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		10E08327D772523AD4896C5F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-UzinkasClient-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		21E46649FCA6BE749C5007A8 /* [CP] Check Pods Manifest.lock */ = {
+		402CB85C743CA4EE87B0265E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -309,41 +287,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5C9A011B037583769B442831 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-UzinkasClient-UzinkasClientTests/Pods-UzinkasClient-UzinkasClientTests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-UzinkasClient-UzinkasClientTests/Pods-UzinkasClient-UzinkasClientTests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UzinkasClient-UzinkasClientTests/Pods-UzinkasClient-UzinkasClientTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		76E6C283B9F69A4588915B88 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-UzinkasClient/Pods-UzinkasClient-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-UzinkasClient/Pods-UzinkasClient-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UzinkasClient/Pods-UzinkasClient-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7BD41878071E46F88640D50C /* [CP] Embed Pods Frameworks */ = {
+		76AD86E6D4C3049B887A034D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -360,7 +304,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UzinkasClient/Pods-UzinkasClient-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DEB17017AE4E08D8CE64B6AD /* [CP] Embed Pods Frameworks */ = {
+		926C3D6C1BFC8B24470B4F1B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -375,6 +319,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UzinkasClient-UzinkasClientTests/Pods-UzinkasClient-UzinkasClientTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		990F32CBF28F79645B8638BB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UzinkasClient-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD3F86366DAB55FD0B785763 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UzinkasClient/Pods-UzinkasClient-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UzinkasClient/Pods-UzinkasClient-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UzinkasClient/Pods-UzinkasClient-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D66A482EEA2C7B8D5B98A939 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UzinkasClient-UzinkasClientTests/Pods-UzinkasClient-UzinkasClientTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UzinkasClient-UzinkasClientTests/Pods-UzinkasClient-UzinkasClientTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UzinkasClient-UzinkasClientTests/Pods-UzinkasClient-UzinkasClientTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -429,7 +429,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CE83AF165E19FD82723BB3B4 /* Pods-UzinkasClient-UzinkasClientTests.debug.xcconfig */;
+			baseConfigurationReference = 899C70368E1B2E83F167C951 /* Pods-UzinkasClient-UzinkasClientTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -456,7 +456,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8B1C884FAEDADA1A1F533B44 /* Pods-UzinkasClient-UzinkasClientTests.release.xcconfig */;
+			baseConfigurationReference = CEE2C7208D0DA3D8E0A2E6C1 /* Pods-UzinkasClient-UzinkasClientTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -480,7 +480,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B71E6288FA9FCDDFD31052BE /* Pods-UzinkasClient.debug.xcconfig */;
+			baseConfigurationReference = 7DB364A134212D369480A9C3 /* Pods-UzinkasClient.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -506,7 +506,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B783878DB03E7F35E0B2042B /* Pods-UzinkasClient.release.xcconfig */;
+			baseConfigurationReference = EA976DE14EF3523EE5FFCB0C /* Pods-UzinkasClient.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

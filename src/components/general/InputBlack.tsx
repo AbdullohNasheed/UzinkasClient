@@ -39,21 +39,21 @@ export default InputBlack;
 
 const styles = StyleSheet.create({
   registerIcon: {
-    // backgroundColor: 'red',
-    fontSize: 19,
-    width: '78%',
-    marginVertical: Platform.OS === 'ios' ? 20 : 10,
+    paddingVertical: 10,
+    fontSize: 16,
+    marginVertical: 5,
     color: '#fff',
   },
   inputContainer: {
+    paddingHorizontal: 15,
     backgroundColor: '#181926',
     flexDirection: 'row',
     marginHorizontal: 20,
     alignItems: 'center',
     borderRadius: 15,
-    marginVertical: 10,
+    marginVertical: 5,
   },
   iconStyles: {
-    marginHorizontal: 15,
+    marginRight: 10,
   },
 });
