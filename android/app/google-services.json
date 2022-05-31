@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "905066041751",
+    "project_id": "uzinkass-41928",
+    "storage_bucket": "uzinkass-41928.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:905066041751:android:4230a098867cddd567f4d2",
+        "android_client_info": {
+          "package_name": "com.uzinkasclient"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "905066041751-nu05r6ibdua84q4g21q8tlraqmimjkfc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAN3guSohf9p6aCWICLhM_g_qz0CBFBix4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "905066041751-nu05r6ibdua84q4g21q8tlraqmimjkfc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

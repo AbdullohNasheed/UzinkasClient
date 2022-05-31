@@ -14,6 +14,7 @@ buildscript {
     }
     dependencies {
         classpath("com.android.tools.build:gradle:4.2.2")
+        classpath('com.google.gms:google-services:4.3.3')
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -35,4 +36,15 @@ allprojects {
         google()
         maven { url 'https://www.jitpack.io' }
     }
+}
+
+ext {
+    googlePlayServicesVersion = "+" // default: "+"
+    firebaseMessagingVersion = "21.1.0" // default: "21.1.0"
+
+    // Other settings
+    compileSdkVersion = 30 // default: 23
+    buildToolsVersion = "30.0.2" // default: "23.0.1"
+    targetSdkVersion = 30 // default: 23
+    supportLibVersion = "30.0.2" // default: 23.1.1
 }
