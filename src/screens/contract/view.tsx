@@ -11,8 +11,8 @@ import DefaultButton from "../../components/general/DefaultButton";
 import DefaultImageBackground from "../../components/general/DefaultImageBackground";
 import { useContractScreenHook } from "./hooks";
 import { styles } from "./style";
-let {onApplecationPress, onApplecation2Press} = useContractScreenHook();
 const Contractview = () => {
+	let { onApplecationPress, onApplecation2Press } = useContractScreenHook();
 	return (
 		<DefaultImageBackground>
 			<View style={styles.contractContainer}>

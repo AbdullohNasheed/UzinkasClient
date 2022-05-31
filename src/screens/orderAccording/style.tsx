@@ -1,6 +1,22 @@
 import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
+  danger: {
+    backgroundColor: 'red',
+    height: '100%',
+    width: '100%',
+    borderRadius: 10,
+    alignSelf: 'center',
+    justifyContent: 'center',
+  },
+  success: {
+    backgroundColor: 'green',
+    height: '100%',
+    width: '100%',
+    borderRadius: 10,
+    alignSelf: 'center',
+    justifyContent: 'center',
+  },
   container: {
     flex: 1,
     backgroundColor: '#181926',

@@ -202,12 +202,12 @@ export function MyOrdersView() {
                   </Text>
                   <DataWhiteIcon />
                 </View>
-                {!animated ? (
-                  <View style={{}}>
-                    <CalendarBox />
-                  </View>
-                ) : null}
               </TouchableOpacity>
+              {!animated ? (
+                <View style={{margin: 20}}>
+                  <CalendarBox />
+                </View>
+              ) : null}
               {orderHistory?.map(e => {
                 return <HistoryButtonBoxScreen orderHistory={e} />;
               })}

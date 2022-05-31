@@ -1,19 +1,8 @@
-import {
-  View,
-  Text,
-  Image,
-  TouchableOpacity,
-  StatusBar,
-  LayoutAnimation,
-} from 'react-native';
 import React, {useState} from 'react';
-import {styles} from './style';
-import {MyOrderHook} from './hooks';
-import {MyOrdersView} from './../../view';
-import ModalBox from './components/modal/modal';
-import MyOrderView, {statuses} from './components/myOrder/view';
-import {useRoute} from '@react-navigation/native';
+import {LayoutAnimation, Text, TouchableOpacity, View} from 'react-native';
 import QRCode from 'react-native-qrcode-svg';
+import MyOrderView, {statuses} from './components/myOrder/view';
+import {styles} from './style';
 const ActiveView = ({order}) => {
   const [shouldShow, setShouldShow] = useState(true);
   return (

@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  ActivityIndicator,
   Dimensions,
   StyleProp,
   StyleSheet,
@@ -16,6 +17,7 @@ export interface DefaultButtonProps {
   style?: StyleProp<ViewStyle>;
   textStyle?: StyleProp<TextStyle>;
   inActive?: boolean;
+  loading?: boolean;
 }
 
 const DefaultButton = ({
@@ -24,6 +26,7 @@ const DefaultButton = ({
   textStyle,
   inActive,
   onPress = () => {},
+  loading,
 }: DefaultButtonProps) => {
   //   let containerStyle = styles.lightContainerStyle;
   //   let textStyle = styles.lightText;
@@ -33,7 +36,11 @@ const DefaultButton = ({
       disabled={inActive}
       style={[styles.buttonContainer, style]}
       onPress={onPress}>
-      <Text style={[styles.buttonText, textStyle]}>{text}</Text>
+      {loading ? (
+        <ActivityIndicator color={'rgba(0, 152, 153, 1)'} />
+      ) : (
+        <Text style={[styles.buttonText, textStyle]}>{text}</Text>
+      )}
     </TouchableOpacity>
   );
 };

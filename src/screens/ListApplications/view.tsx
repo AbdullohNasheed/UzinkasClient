@@ -1,40 +1,34 @@
-import {View, Text, ScrollView} from 'react-native';
-import React from 'react';
-import {styles} from './styles';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import React, { useState } from 'react';
+import { ScrollView, View } from 'react-native';
+import { requests } from '../../api/requests';
 import HeaderComponent from '../../components/header/Header';
 import ListApp from './components/listApp';
 import ListAppOne from './components/listAppOne';
-import ListAppTwo from './components/listAppTwo';
 import ListAppThree from './components/listAppThree';
+import ListAppTwo from './components/listAppTwo';
+import { useActsHook } from './hooks';
+import { styles } from './styles';
 
 const ListApplications = () => {
+  const { acts } = useActsHook();
+
   return (
     <View style={styles.container}>
-      <SafeAreaView>
-        <HeaderComponent
-          hasMenuOne={false}
-          hasMenu={true}
-          text="Список заявок"
-        />
-        <ScrollView style={{width: '100%', height: '100%'}}>
-          <View style={{paddingVertical: 20}}>
-            <View style={styles.components}>
-              <ListApp />
-            </View>
-            <View style={styles.components}>
-              <ListAppOne />
-            </View>
-            <View style={styles.components}>
-              <ListAppTwo />
-            </View>
-            <View style={styles.components}>
-              <ListAppThree />
-            </View>
+      <HeaderComponent
+        hasMenuOne={false}
+        hasMenu={true}
+        text="Список заявок"
+      />
+      <ScrollView style={{ marginBottom: 80 }} >
+        {acts.map(e => {
+          console.log({ e });
+
+          return <View style={styles.components}>
+            <ListApp {...e} />
           </View>
-        </ScrollView>
-      </SafeAreaView>
-    </View>
+        })}
+      </ScrollView>
+    </View >
   );
 };
 

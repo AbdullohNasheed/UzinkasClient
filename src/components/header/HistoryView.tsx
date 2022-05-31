@@ -2,6 +2,7 @@ import {View, Text, StyleSheet, Image} from 'react-native';
 import React from 'react';
 import {statuses} from '../../screens/myOrders/components/activeBox/components/myOrder/view';
 import {normalizePrice} from '../../utils/string';
+import QRCode from 'react-native-qrcode-svg';
 
 const History = ({orderHistory}) => {
   return (
@@ -68,10 +69,7 @@ const History = ({orderHistory}) => {
         <Text style={styles.Text}>{orderHistory?.client?.name}</Text>
       </View>
       <View style={styles.imageContainer}>
-        <Image
-          style={styles.image}
-          source={require('../../assets/image/QrkodOne.png')}
-        />
+        <QRCode size={80} value={orderHistory?.hash} />
       </View>
     </View>
   );

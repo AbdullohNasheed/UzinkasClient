@@ -30,6 +30,7 @@ export const requests = {
   order: {
     createOrder: (data: OrderRequest) =>
       axiosInstance.post<OrderResponse>('/createOrder', data),
+    cancel: (id: number) => axiosInstance(`/cancelOrder/${id}`),
   },
   partner: {
     creatPartner: (data: PartnerRequest) =>
@@ -41,6 +42,7 @@ export const requests = {
   },
   getHistory: {
     getActive: () => axiosInstance.get('/activeOrders'),
+    getActs: () => axiosInstance.get('/getClientActs'),
     getHistory: () =>
       axiosInstance.get('/orderHistory?from=15-11-2022&to=25-11-2022'),
   },

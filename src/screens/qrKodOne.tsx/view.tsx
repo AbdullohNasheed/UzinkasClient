@@ -12,7 +12,8 @@ import {styles} from './style';
 const QrKodViewOne = () => {
   const route = useRoute();
   const navigate = useNavigation();
-  const {onBackPress, onOrderAdditionalPress} = useKodScreenHookOne();
+  const {onBackPress, onOrderAdditionalPress, onSavePress, ref} =
+    useKodScreenHookOne();
   return (
     <DefaultImageBackground>
       <SafeAreaView>
@@ -22,12 +23,15 @@ const QrKodViewOne = () => {
             source={require('../../assets/image/inakass3.png')}
           />
           <View style={styles.qrKodBox}>
-            <QRCode size={210} value={route?.params?.hash} />
-            {/* <Image source={require('../../assets/image/qrkod.png')} /> */}
+            <QRCode
+              getRef={e => (ref.current = e)}
+              size={210}
+              value={route?.params?.hash}
+            />
           </View>
         </View>
         <View style={styles.bottonBox}>
-          <DefaultButton text={'Сохранить'} />
+          <DefaultButton text={'Сохранить'} onPress={onSavePress} />
           <DefaultButton onPress={onBackPress} text={'Отмена'} />
         </View>
       </SafeAreaView>

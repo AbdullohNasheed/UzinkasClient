@@ -16,23 +16,24 @@ import {Snackbar} from 'react-native-paper';
 import {ScrollView} from 'react-native-gesture-handler';
 
 const OrderAccordingView = () => {
-  const {error, handleChange, link, onQrKodOnePress, removeError, state} =
-    useQrKodScreenOneHook();
+  const {
+    error,
+    handleChange,
+    link,
+    onQrKodOnePress,
+    removeError,
+    state,
+    success,
+    loading,
+  } = useQrKodScreenOneHook();
   return (
     <SafeAreaView style={styles.container}>
       <HeaderComponent hasMenu hasMenuOne={false} text={'Заказать по плану'} />
       <View style={styles.errorBox}>
         <Snackbar
-          style={{
-            backgroundColor: 'red',
-            height: '100%',
-            width: '100%',
-            borderRadius: 10,
-            alignSelf: 'center',
-            justifyContent: 'center',
-          }}
+          style={success ? styles.success : styles.danger}
           onDismiss={removeError}
-          visible={!!error}>
+          visible={!!error || !!success}>
           {error}
         </Snackbar>
       </View>
@@ -43,7 +44,9 @@ const OrderAccordingView = () => {
             value={state.date}
             onChange={handleChange('date')}
             icon={KalendarMiniIcon}
-            placeholder="01.12"
+            placeholder="01-01-1997"
+            keyboardType="number-pad"
+            mask={[/\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
           />
           <Text style={styles.text}>Сумма денег, подлежающая перечислению</Text>
           <InputBlack
@@ -51,6 +54,7 @@ const OrderAccordingView = () => {
             onChange={handleChange('amount')}
             icon={MonyIcon}
             placeholder={'Сумма'}
+            keyboardType="number-pad"
           />
           <Text style={styles.text}>Код ракамлари</Text>
           <InputBlack
@@ -58,9 +62,14 @@ const OrderAccordingView = () => {
             onChange={handleChange('bag')}
             icon={CircleIcon}
             placeholder={'Код'}
+            keyboardType="number-pad"
           />
           <View style={styles.bottonBox}>
-            <DefaultButton onPress={link} text={'Генерация QR-кода'} />
+            <DefaultButton
+              loading={loading}
+              onPress={link}
+              text={'Генерация QR-кода'}
+            />
           </View>
         </View>
       </ScrollView>

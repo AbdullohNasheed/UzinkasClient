@@ -1,27 +1,35 @@
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import React from 'react';
 
-const ListApp = () => {
+export const statusMapper = {
+  0: "На модерации",
+  1: "Отменена",
+  2: "Утверждена",
+  3: "Отправлена на почту"
+}
+
+const ListApp = ({ status, date_from, date_to }: { status: keyof typeof statusMapper, date_to: string, date_from: string }) => {
+
   return (
     <TouchableOpacity style={styles.container}>
       <View style={styles.boxOne}>
         <View style={styles.boxInner}>
           <Text style={styles.textOne}>От: </Text>
-          <Text style={styles.textOne}> 15 январь</Text>
+          <Text style={styles.textOne}> {date_from}</Text>
         </View>
-        <View style={{marginVertical: 6}} />
+        <View style={{ marginVertical: 6 }} />
         <View style={styles.boxInnerOne}>
           <Text style={styles.textOne}>До: </Text>
-          <Text style={styles.textOne}> 23 январь</Text>
+          <Text style={styles.textOne}>{date_to}</Text>
         </View>
       </View>
       <View style={styles.boxTwo}>
         <View>
           <Text style={styles.textOne}>Статус:</Text>
         </View>
-        <View style={{marginVertical: 6}} />
+        <View style={{ marginVertical: 6 }} />
         <View>
-          <Text style={styles.textTwo}>На модерации</Text>
+          <Text style={styles.textTwo}>{statusMapper[status]}</Text>
         </View>
       </View>
     </TouchableOpacity>
@@ -47,7 +55,6 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   boxOne: {
-    flex: 1,
     paddingVertical: 20,
     borderRightWidth: 1,
     paddingHorizontal: 20,
@@ -55,7 +62,6 @@ const styles = StyleSheet.create({
   },
   boxTwo: {
     paddingVertical: 15,
-    flex: 1,
     paddingHorizontal: 10,
   },
   boxInner: {

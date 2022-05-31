@@ -3,16 +3,20 @@ import {Calendar} from 'react-native-calendars';
 import React from 'react';
 import {DateHook} from './dateHook';
 const CalendarBox = () => {
-  const {getCurrentDate, getMinDate, setDate, date} = DateHook();
+  const {getCurrentDate, getMinDate, setDate, date, markedDays, onDayPress} =
+    DateHook();
   return (
     <View style={styles.container}>
       <Calendar
-        current={getCurrentDate().toString()}
-        minDate={getMinDate().toString()}
-        maxDate={`2050-01-01`}
-        monthFormat={`MMMM yyyy`}
+        current={'2022-05-05'}
+        minDate={'1997-05-05'}
+        maxDate={`2050-05-05`}
+        monthFormat={`dd-MM-yyyy`}
         onDayLongPress={day => {
-          setDate(day.dateString);
+          console.log(day);
+        }}
+        renderHeader={date => {
+          console.log({date});
         }}
         hideArrows={false}
         hideExtraDays={true}
@@ -21,6 +25,16 @@ const CalendarBox = () => {
         theme={{
           calendarBackground: '#2b2c36',
           todayTextColor: '#fff',
+        }}
+        markingType="period"
+        markedDates={markedDays}
+        onDayPress={onDayPress}
+        onPress={e => {
+          console.log(e);
+          console.log('pressed');
+        }}
+        onLongPress={e => {
+          console.log(e);
         }}
       />
     </View>

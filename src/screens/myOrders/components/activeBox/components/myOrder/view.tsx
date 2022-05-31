@@ -5,6 +5,7 @@ import DefaultButton from '../../../../../../components/general/DefaultButton';
 import QRCode from 'react-native-qrcode-svg';
 import ReactNativeModal from 'react-native-modal';
 import {normalizePrice} from '../../../../../../utils/string';
+import {requests} from '../../../../../../api/requests';
 
 export let statuses = {
   '0': ' Новая заявка',
@@ -18,6 +19,15 @@ const MyOrderView = ({order}) => {
   const toggleDispatchTextModal = () => {
     setModalVisible(true);
   };
+
+  const [loading, setLoading] = useState(false);
+
+  const onCancel = async () => {
+    try {
+      let res = await requests.order.cancel(order.id);
+    } catch (error) {}
+  };
+
   return (
     <>
       <View style={styles.container}>
@@ -89,7 +99,7 @@ const MyOrderView = ({order}) => {
           }}
           text={'Позвонить инкассатору'}
         />
-        <DefaultButton text="Отмена" onPress={setModalVisible} />
+        <DefaultButton text="Отмена" onPress={onCancel} />
         <ReactNativeModal
           backdropOpacity={0.5}
           onBackdropPress={() => setModalVisible(false)}

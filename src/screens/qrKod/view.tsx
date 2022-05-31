@@ -1,18 +1,18 @@
-import {useNavigation, useRoute} from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import React from 'react';
-import {Image, View} from 'react-native';
+import { Image, View } from 'react-native';
 import QRCode from 'react-native-qrcode-svg';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import DefaultButton from '../../components/general/DefaultButton';
 import DefaultImageBackground from '../../components/general/DefaultImageBackground';
-import {ROUTES} from '../../navigation/ROUTES';
-import {useKodScreenHook} from './hooks';
-import {styles} from './style';
+import { ROUTES } from '../../navigation/ROUTES';
+import { useKodScreenHook } from './hooks';
+import { styles } from './style';
 
 const QrKodView = () => {
   const route = useRoute();
   const navigate = useNavigation();
-  const {onBackPress, onOrderAdditionalPress} = useKodScreenHook();
+  const { onBackPress, onOrderAdditionalPress } = useKodScreenHook();
   return (
     <DefaultImageBackground>
       <SafeAreaView>

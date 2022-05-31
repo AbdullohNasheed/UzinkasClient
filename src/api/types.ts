@@ -81,7 +81,7 @@ export interface OrderRequest {
   date: string;
   amount: string;
   bag: string;
-  time: string;
+  time?: string;
 }
 export interface PartnerRequest {
   name_organization: string;
