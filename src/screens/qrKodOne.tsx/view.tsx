@@ -14,6 +14,7 @@ const QrKodViewOne = () => {
   const navigate = useNavigation();
   const {onBackPress, onOrderAdditionalPress, onSavePress, ref} =
     useKodScreenHookOne();
+
   return (
     <DefaultImageBackground>
       <SafeAreaView>
@@ -26,13 +27,13 @@ const QrKodViewOne = () => {
             <QRCode
               getRef={e => (ref.current = e)}
               size={210}
-              value={route?.params?.hash}
+              value={route?.params?.order.hash}
             />
           </View>
         </View>
         <View style={styles.bottonBox}>
           <DefaultButton text={'Сохранить'} onPress={onSavePress} />
-          <DefaultButton onPress={onBackPress} text={'Отмена'} />
+          <DefaultButton onPress={onBackPress} text={'На главную'} />
         </View>
       </SafeAreaView>
     </DefaultImageBackground>

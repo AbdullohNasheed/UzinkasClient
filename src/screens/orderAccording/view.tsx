@@ -16,16 +16,10 @@ import {Snackbar} from 'react-native-paper';
 import {ScrollView} from 'react-native-gesture-handler';
 
 const OrderAccordingView = () => {
-  const {
-    error,
-    handleChange,
-    link,
-    onQrKodOnePress,
-    removeError,
-    state,
-    success,
-    loading,
-  } = useQrKodScreenOneHook();
+  const {error, handleChange, link, removeError, state, success, loading} =
+    useQrKodScreenOneHook();
+  console.log(error);
+
   return (
     <SafeAreaView style={styles.container}>
       <HeaderComponent hasMenu hasMenuOne={false} text={'Заказать по плану'} />
@@ -56,12 +50,12 @@ const OrderAccordingView = () => {
             placeholder={'Сумма'}
             keyboardType="number-pad"
           />
-          <Text style={styles.text}>Код ракамлари</Text>
+          <Text style={styles.text}>Қоп рақамлари</Text>
           <InputBlack
             value={state.bag}
             onChange={handleChange('bag')}
             icon={CircleIcon}
-            placeholder={'Код'}
+            placeholder={'Қоп рақами'}
             keyboardType="number-pad"
           />
           <View style={styles.bottonBox}>

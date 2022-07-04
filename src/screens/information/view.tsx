@@ -1,3 +1,4 @@
+import dayjs from 'dayjs';
 import React from 'react';
 import {
   View,
@@ -29,6 +30,8 @@ const Informationview = () => {
     setModalVisible,
     onLogoutPress,
   } = useInformationScreenHook();
+
+  console.log(user.user,"THIS IS USER");
 
   return (
     <SafeAreaView style={styles.container}>
@@ -80,7 +83,7 @@ const Informationview = () => {
                 <KalendarIcon />
               </View>
               <View style={styles.textContainer}>
-                <Text style={styles.textOne}>{user.user?.date}</Text>
+                <Text style={styles.textOne}>{dayjs(user.user?.date).format("DD-MM-YYYY")}</Text>
                 <Text style={styles.textTwo}>Дата заключения контракта</Text>
               </View>
             </View>
@@ -104,7 +107,7 @@ const Informationview = () => {
                 <LoremIcon />
               </View>
               <View style={styles.textContainer}>
-                <Text style={styles.textOne}>{user.user?.tariff.name}</Text>
+                <Text style={styles.textOne}>{user.user?.tariff?.name}</Text>
                 <Text style={styles.textTwo}>Тарифный план</Text>
               </View>
             </View>
@@ -116,7 +119,7 @@ const Informationview = () => {
                 <GoldIcon />
               </View>
               <View style={styles.textContainer}>
-                <Text style={styles.textOne}>?</Text>
+                <Text style={styles.textOne}>{user.user.bag_count}</Text>
                 <Text style={styles.textTwo}>Кол-во мешков</Text>
               </View>
             </View>
@@ -152,7 +155,7 @@ const Informationview = () => {
                 <CarbonIcon />
               </View>
               <View style={styles.textContainer}>
-                <Text style={styles.textOne}>?</Text>
+                <Text style={styles.textOne}>{user.user?.period}</Text>
                 <Text style={styles.textTwo}>План сбора ( в неделю)</Text>
               </View>
             </View>

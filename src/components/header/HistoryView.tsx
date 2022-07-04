@@ -3,14 +3,17 @@ import React from 'react';
 import {statuses} from '../../screens/myOrders/components/activeBox/components/myOrder/view';
 import {normalizePrice} from '../../utils/string';
 import QRCode from 'react-native-qrcode-svg';
+import dayjs from 'dayjs';
 
-const History = ({orderHistory}) => {
+const History = ({orderHistory, counts}) => {
   return (
     <View style={styles.container}>
       <View style={styles.boxOne}>
         <View style={styles.flexOne}>
           <View style={styles.historyBox}>
-            <Text style={styles.textOne}>11 сентября</Text>
+            <Text style={styles.textOne}>
+              {dayjs(orderHistory.date).format("DD-MM-YYYY")}
+            </Text>
           </View>
           <View style={styles.historyBox}>
             <Text style={styles.textOne}>Статус:</Text>
@@ -24,11 +27,11 @@ const History = ({orderHistory}) => {
           <View style={styles.historyBoxOne}>
             <View style={styles.box}>
               <Text style={styles.textThree}>Режали</Text>
-              <Text style={styles.textOne}>4</Text>
+              <Text style={styles.textOne}>{counts?.tariff}</Text>
             </View>
             <View style={styles.box}>
               <Text style={styles.textThree}>Кушимча</Text>
-              <Text style={styles.textOne}>0</Text>
+              <Text style={styles.textOne}>{counts?.total}</Text>
             </View>
           </View>
         </View>

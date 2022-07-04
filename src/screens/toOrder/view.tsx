@@ -7,7 +7,7 @@ import HeaderComponent from '../../components/header/Header';
 import {usesOrderScreenHook} from './hooks';
 import {styles} from './style';
 const ToOrderview = () => {
-  let {onOrderPress, onAdditionalPress} = usesOrderScreenHook();
+  let {onOrderPress, onAdditionalPress, loading} = usesOrderScreenHook();
   return (
     <SafeAreaView style={styles.container}>
       <HeaderComponent hasMenu hasMenuOne={false} text={'Заказать'} />
@@ -18,7 +18,11 @@ const ToOrderview = () => {
             <TrackTwoIcon style={styles.icon} />
           </View>
         </View>
-        <DefaultButton onPress={onOrderPress} text={'По плану'} />
+        <DefaultButton
+          loading={loading}
+          onPress={onOrderPress}
+          text={'По плану'}
+        />
         <DefaultButton
           onPress={onAdditionalPress}
           text={'Заказать доп. визит'}

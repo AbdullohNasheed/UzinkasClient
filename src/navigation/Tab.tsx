@@ -1,5 +1,5 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import React, { PropsWithChildren } from 'react';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import React, {PropsWithChildren} from 'react';
 import {
   Image,
   Platform,
@@ -8,11 +8,11 @@ import {
   View,
   Text,
 } from 'react-native';
-import { InformationScreen } from '../screens/information';
-import { MyOrdersScreen } from '../screens/myOrders';
+import {InformationScreen} from '../screens/information';
+import {MyOrdersScreen} from '../screens/myOrders';
 import PersonalStack from '../screens/personal/hooks';
-import { QrKodOneScreen } from '../screens/qrKodOne.tsx';
-import { ToOrderScreen } from '../screens/toOrder';
+import {QrKodOneScreen} from '../screens/qrKodOne.tsx';
+import {ToOrderScreen} from '../screens/toOrder';
 const img1 = require('../assets/image/Home.png');
 const img2 = require('../assets/image/Note.png');
 const img3 = require('../assets/image/user.png');
@@ -44,13 +44,13 @@ const Tabs = () => {
           paddingHorizontal: 15,
           height: 80,
         },
-        tabBarHideOnKeyboard: true
+        tabBarHideOnKeyboard: true,
       }}>
       <Tab.Screen
         name="Home"
-        component={QrKodOneScreen}
+        component={PersonalStack}
         options={{
-          tabBarIcon: ({ focused }) => (
+          tabBarIcon: ({focused}) => (
             <View
               style={{
                 alignItems: 'center',
@@ -68,7 +68,7 @@ const Tabs = () => {
                     : 'rgba(182, 182, 182, 1)',
                 }}
               />
-              <Text style={{ color: '#98989b', fontSize: 15, marginTop: 3 }}>
+              <Text style={{color: '#98989b', fontSize: 15, marginTop: 3}}>
                 Главная
               </Text>
             </View>
@@ -81,7 +81,7 @@ const Tabs = () => {
         name="order"
         component={MyOrdersScreen}
         options={{
-          tabBarIcon: ({ focused }) => (
+          tabBarIcon: ({focused}) => (
             <View
               style={{
                 alignItems: 'center',
@@ -99,7 +99,7 @@ const Tabs = () => {
                     : 'rgba(182, 182, 182, 1)',
                 }}
               />
-              <Text style={{ color: '#98989b', fontSize: 15, marginTop: 3 }}>
+              <Text style={{color: '#98989b', fontSize: 15, marginTop: 3}}>
                 Заказы
               </Text>
             </View>
@@ -111,7 +111,7 @@ const Tabs = () => {
         name="MyOrder"
         component={ToOrderScreen}
         options={{
-          tabBarIcon: ({ focused }) => (
+          tabBarIcon: ({focused}) => (
             <View
               style={{
                 alignItems: 'center',
@@ -129,7 +129,7 @@ const Tabs = () => {
                     : 'rgba(182, 182, 182, 1)',
                 }}
               />
-              <Text style={{ color: '#98989b', fontSize: 15, marginTop: 3 }}>
+              <Text style={{color: '#98989b', fontSize: 15, marginTop: 3}}>
                 Заказать
               </Text>
             </View>
@@ -141,7 +141,7 @@ const Tabs = () => {
         name="Newww"
         component={InformationScreen}
         options={{
-          tabBarIcon: ({ focused }) => (
+          tabBarIcon: ({focused}) => (
             <View
               style={{
                 alignItems: 'center',
@@ -159,7 +159,7 @@ const Tabs = () => {
                     : 'rgba(182, 182, 182, 1)',
                 }}
               />
-              <Text style={{ color: '#98989b', fontSize: 15, marginTop: 3 }}>
+              <Text style={{color: '#98989b', fontSize: 15, marginTop: 3}}>
                 Профиль
               </Text>
             </View>

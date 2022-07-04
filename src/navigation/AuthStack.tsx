@@ -48,7 +48,7 @@ const AuthStack = () => {
         </>
       ) : (
         <>
-          <Stack.Screen name={ROUTES.HOME_TABS} component={DrawerNavigator} />
+          <Stack.Screen name={ROUTES.HOME_TABS} component={Tabs} />
           <Stack.Screen name={ROUTES.QRKOD} component={QrKodScreen} />
           <Stack.Screen name={ROUTES.QRCODEONE} component={QrKodOneScreen} />
         </>

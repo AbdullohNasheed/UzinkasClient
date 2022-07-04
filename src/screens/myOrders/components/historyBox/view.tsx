@@ -12,12 +12,12 @@ const HistoryViewOne = () => {
     <View style={styles.container}>
       <View style={styles.buttonContainer}>
         <DefaultButton onPress={onPress} text={'Заказать сравнительный акт'} />
-        <DefaultButton
+        {/* <DefaultButton
           onPress={() => {
             Linking.openURL(`tel:${phone}`);
           }}
           text={'Позвонить инкассатору'}
-        />
+        /> */}
       </View>
     </View>
   );

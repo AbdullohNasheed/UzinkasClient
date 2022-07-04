@@ -8,6 +8,7 @@ export enum ROUTES {
   REGISTER = 'REGISTER',
   PINCODE = 'PINCODE',
   HOME_STACK = 'HOME_STACK',
+  HOME_SCREEN = 'HOME_SCREEN',
 
   // Tabs Navigation ......
 

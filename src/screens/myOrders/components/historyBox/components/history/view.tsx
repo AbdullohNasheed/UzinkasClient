@@ -5,10 +5,12 @@ import History from '../../../../../../components/header/HistoryView';
 import DefaultButton from '../../../../../../components/general/DefaultButton';
 import {HistoryOrderHooks} from './hooks';
 
-const HomeView = ({orderHistory}) => {
+const HomeView = ({orderHistory, counts}) => {
+  console.log({counts});
+
   return (
     <View>
-      <History orderHistory={orderHistory} />
+      <History orderHistory={orderHistory} counts={counts} />
     </View>
   );
 };

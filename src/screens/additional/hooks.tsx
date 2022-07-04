@@ -13,14 +13,40 @@ export const useQrKodScreenHook = () => {
     time: '',
   });
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState('');
   let handleChange = (key: keyof OrderRequest) => (value: string) => {
     console.log({key, value});
 
     setState({...state, [key]: value});
   };
   let navigation = useNavigation();
-  const link = () => {
-    navigation.navigate(ROUTES.QRKOD);
+  const link = async () => {
+    let valid = Object.keys(state).every(
+      el => !!state[el as keyof OrderRequest],
+    );
+    if (!valid) {
+      setError('Пожалуйста заполните все поля');
+      return;
+    }
+    setLoading(true);
+    try {
+      const res = await requests.order.createAdditional(state);
+
+      if (res.data.success) {
+        setSuccess('Заказ успешно выполнен');
+        console.log(res.data);
+
+        navigation.navigate(ROUTES.QRCODEONE, res.data);
+      } else {
+        setError(res.data.message || res.data.error);
+      }
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+      setError('Что-то пошло не так. Пожалуйста, повторите попытку позже');
+    }
+    // navigation.navigate(ROUTES.QRKOD);
   };
   let onQrKodPress = async () => {
     try {

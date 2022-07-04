@@ -73,10 +73,10 @@ const Additionalview = () => {
               icon={MishokIcon}
               placeholder={'Код'}
             />
-            <View style={styles.textBox}>
+            {/* <View style={styles.textBox}>
               <Text style={styles.textOne}>Стоимость доп.визита</Text>
               <Text style={styles.textTwo}>1.000.000</Text>
-            </View>
+            </View> */}
           </View>
           <DefaultButton onPress={link} text={'Генерация QR-кода'} />
         </View>

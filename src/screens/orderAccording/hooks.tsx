@@ -1,4 +1,6 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useNavigation} from '@react-navigation/core';
+import dayjs from 'dayjs';
 import {useState} from 'react';
 import {Snackbar} from 'react-native-paper';
 import {requests} from '../../api/requests';
@@ -7,7 +9,7 @@ import {ROUTES} from '../../navigation/ROUTES';
 
 export const useQrKodScreenOneHook = () => {
   const [state, setState] = useState<OrderRequest>({
-    date: '',
+    date: dayjs().format('DD-MM-YYYY'),
     amount: '',
     bag: '',
   });
@@ -20,6 +22,7 @@ export const useQrKodScreenOneHook = () => {
     setState({...state, [key]: value});
   };
   let navigation = useNavigation();
+
   const link = async () => {
     let valid = Object.keys(state).every(
       el => !!state[el as keyof OrderRequest],
@@ -31,40 +34,28 @@ export const useQrKodScreenOneHook = () => {
     setLoading(true);
     try {
       const res = await requests.order.createOrder(state);
+
       if (res.data.success) {
         setSuccess('Заказ успешно выполнен');
+        console.log(res.data);
+
+        await AsyncStorage.setItem('QRCODE', res.data.order?.hash);
         navigation.navigate(ROUTES.QRCODEONE, res.data);
       } else {
-        setError(res.data.message);
+        setError(res.data.message || res.data.error);
       }
       setLoading(false);
     } catch (error) {
+      console.log(error);
       setError('Что-то пошло не так. Пожалуйста, повторите попытку позже');
-    }
-  };
-  // let order = useSelector(selectOrder);
-  let onQrKodOnePress = async () => {
-    try {
-      let res = await requests.order.createOrder(state);
-      if (res.data.success) {
-        navigation.navigate(ROUTES.QRCODEONE, res.data);
-      } else {
-        console.log(res.data);
-        setError(res.data.message);
-      }
-    } catch (error) {
-      console.log(error.response);
-
-      setError('Что-то пошло не так');
     }
   };
 
   const removeError = () => {
-    setError('');
+    // setError('');
   };
 
   return {
-    onQrKodOnePress,
     state,
     handleChange,
     error,

@@ -32,7 +32,7 @@ export const styles = StyleSheet.create({
     flex: 1.3,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    // justifyContent: 'space-between',
   },
   flexTwo: {
     flex: 1,

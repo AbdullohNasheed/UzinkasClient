@@ -15,7 +15,7 @@ export const useKodScreenHookOne = () => {
     navigation.navigate(ROUTES.ORDERADITIONAL);
   };
   const onBackPress = () => {
-    navigation.goBack();
+    navigation.navigate(ROUTES.HOME_SCREEN);
   };
 
   const onSavePress = () => {
@@ -37,7 +37,7 @@ export const useKodScreenHookOne = () => {
         url: `data:image/png;base64,${data}`,
       };
       const dirs = RNFetchBlob.fs.dirs;
-      var path = dirs.DCIMDir + `/${route.params?.hash}.png`;
+      var path = dirs.DCIMDir + `/${route.params?.order.hash}.png`;
       RNFetchBlob.fs.writeFile(path, data, 'base64').then(res => {
         console.log('File : ', res);
       });

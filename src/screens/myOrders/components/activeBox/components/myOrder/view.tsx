@@ -1,4 +1,11 @@
-import {View, Text, Image, TouchableOpacity, Linking} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  Linking,
+  Alert,
+} from 'react-native';
 import React, {useState} from 'react';
 import {styles} from './style';
 import DefaultButton from '../../../../../../components/general/DefaultButton';
@@ -6,6 +13,7 @@ import QRCode from 'react-native-qrcode-svg';
 import ReactNativeModal from 'react-native-modal';
 import {normalizePrice} from '../../../../../../utils/string';
 import {requests} from '../../../../../../api/requests';
+import {ActivityIndicator} from 'react-native-paper';
 
 export let statuses = {
   '0': ' Новая заявка',
@@ -14,7 +22,7 @@ export let statuses = {
   '3': ' Отмененная инкасация',
 };
 let phone = 998595937;
-const MyOrderView = ({order}) => {
+const MyOrderView = ({order, counts}) => {
   const [modalVisible, setModalVisible] = useState(false);
   const toggleDispatchTextModal = () => {
     setModalVisible(true);
@@ -23,9 +31,13 @@ const MyOrderView = ({order}) => {
   const [loading, setLoading] = useState(false);
 
   const onCancel = async () => {
+    setLoading(true);
     try {
       let res = await requests.order.cancel(order.id);
+      Alert.alert('Внимание', res.data.message);
     } catch (error) {}
+    setLoading(false);
+    setModalVisible(false);
   };
 
   return (
@@ -41,27 +53,27 @@ const MyOrderView = ({order}) => {
               <Text style={styles.textTwo}>{statuses[order?.status]}</Text>
             </View>
           </View>
-          <View style={styles.flexTwo}>
+          {/* <View style={styles.flexTwo}>
             <View style={styles.historyBox}>
               <Text style={styles.textOne}>Ташрифлар сони</Text>
             </View>
             <View style={styles.historyBoxOne}>
               <View style={styles.box}>
                 <Text style={styles.textThree}>Режали</Text>
-                <Text style={styles.textOne}>4</Text>
+                <Text style={styles.textOne}>{counts?.tariff}</Text>
               </View>
               <View style={styles.box}>
                 <Text style={styles.textThree}>Кушимча</Text>
-                <Text style={styles.textOne}>0</Text>
+                <Text style={styles.textOne}>{counts?.total}</Text>
               </View>
             </View>
-          </View>
+          </View> */}
         </View>
         <View style={styles.boxTwo}>
           <Text style={styles.textName}>Сумма</Text>
           <Text style={styles.textNumber}>{normalizePrice(order?.amount)}</Text>
         </View>
-        <View style={styles.one}>
+        {/* <View style={styles.one}>
           <View style={styles.flexTwo}>
             <View style={styles.historyBox}>
               <Text style={styles.textOne}>Ташрифлар сони</Text>
@@ -77,11 +89,11 @@ const MyOrderView = ({order}) => {
               </View>
             </View>
           </View>
-        </View>
-        <View style={styles.boxTwo}>
+        </View> */}
+        {/* <View style={styles.boxTwo}>
           <Text style={styles.textName}>Тулов суммаси</Text>
           <Text style={styles.textNumber}>{normalizePrice(order?.amount)}</Text>
-        </View>
+        </View> */}
         <View style={styles.boxTwo}>
           <Text style={styles.text}>Инкассатор</Text>
           <Text style={styles.Text}>{order?.client?.name}</Text>
@@ -95,30 +107,36 @@ const MyOrderView = ({order}) => {
       <View style={{marginVertical: 20}}>
         <DefaultButton
           onPress={() => {
-            Linking.openURL(`tel:${phone}`);
+            Linking.openURL(`tel:712440488}`);
           }}
-          text={'Позвонить инкассатору'}
+          text={'Позвонить диспетчеру'}
         />
-        <DefaultButton text="Отмена" onPress={onCancel} />
+        <DefaultButton text="Отмена" onPress={() => setModalVisible(true)} />
         <ReactNativeModal
           backdropOpacity={0.5}
           onBackdropPress={() => setModalVisible(false)}
           isVisible={modalVisible}>
           <View style={styles.modalContainer}>
             <View style={{height: '50%', justifyContent: 'space-between'}}>
-              <View style={{alignItems: 'center'}}>
-                <Text style={styles.modalTextOne}>
-                  Вы уверены, что хотите отменить заказ?
-                </Text>
-              </View>
-              <View style={styles.modalBox}>
-                <TouchableOpacity>
-                  <Text style={styles.modalTextTwo}>Да</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => setModalVisible(false)}>
-                  <Text style={styles.modalTextThree}>Нет</Text>
-                </TouchableOpacity>
-              </View>
+              {loading ? (
+                <ActivityIndicator />
+              ) : (
+                <>
+                  <View style={{alignItems: 'center'}}>
+                    <Text style={styles.modalTextOne}>
+                      Вы уверены, что хотите отменить заказ?
+                    </Text>
+                  </View>
+                  <View style={styles.modalBox}>
+                    <TouchableOpacity onPress={onCancel}>
+                      <Text style={styles.modalTextTwo}>Да</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => setModalVisible(false)}>
+                      <Text style={styles.modalTextThree}>Нет</Text>
+                    </TouchableOpacity>
+                  </View>
+                </>
+              )}
             </View>
           </View>
         </ReactNativeModal>

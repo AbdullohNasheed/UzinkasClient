@@ -55,7 +55,7 @@ export default function PersonalStack() {
       screenOptions={{
         headerShown: false,
       }}>
-      <Stack.Screen name={ROUTES.HOME_TABS} component={PersonalScreen} />
+      <Stack.Screen name={ROUTES.HOME_SCREEN} component={PersonalScreen} />
       <Stack.Screen name={ROUTES.COMPARATIVE} component={ComparativeScreen} />
       <Stack.Screen
         name={ROUTES.COMPARATIVEONE}

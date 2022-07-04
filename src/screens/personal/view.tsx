@@ -35,7 +35,7 @@ const PersonalView = () => {
           <View style={{marginBottom: 180}}>
             <View style={styles.boxx}>
               <Text style={styles.textOne}>{user.user?.name}</Text>
-              <Text style={styles.textOne}>{user.user?.tariff.name}</Text>
+              <Text style={styles.textOne}>{user.user?.tariff?.name}</Text>
             </View>
             <TouchableOpacity onPress={onMyOrderPress} style={styles.box}>
               <View style={styles.boxOne}>

@@ -30,7 +30,11 @@ export const requests = {
   order: {
     createOrder: (data: OrderRequest) =>
       axiosInstance.post<OrderResponse>('/createOrder', data),
-    cancel: (id: number) => axiosInstance(`/cancelOrder/${id}`),
+    cancel: (id: number) => axiosInstance.get(`/cancelOrder/${id}`),
+    getOrderByHash: (hash: string) =>
+      axiosInstance.get('/getOrderHash', {params: {hash}}),
+    createAdditional: (data: any) =>
+      axiosInstance.post('/createExtraOrder', data),
   },
   partner: {
     creatPartner: (data: PartnerRequest) =>

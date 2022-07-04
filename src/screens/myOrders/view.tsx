@@ -28,8 +28,8 @@ export function MyOrdersView() {
   // const onCalendarPress = () => {
   //   navigation.navigate(ROUTES.);
   // };
-  const {order, loading} = useActiveData();
-  const {orderHistory, loadingOne} = useHistoryData();
+  const {order, loading, counts: activeCounts} = useActiveData();
+  const {orderHistory, loadingOne, counts: historyCounts} = useHistoryData();
   const [animated, setAnimated] = useState(true);
 
   const [state, setState] = useState({
@@ -92,6 +92,7 @@ export function MyOrdersView() {
   useEffect(() => {
     handleSlide(xTabOne);
   }, [state.active]);
+  console.log({historyCounts, activeCounts});
 
   return (
     <View style={{flex: 1, backgroundColor: 'rgba(36, 37, 49, 1)'}}>
@@ -163,7 +164,7 @@ export function MyOrdersView() {
                 />
               )}
               {order?.map(e => {
-                return <ActiveBoxScreen order={e} />;
+                return <ActiveBoxScreen order={e} counts={activeCounts} />;
               })}
             </Animated.View>
             <Animated.View
@@ -209,7 +210,12 @@ export function MyOrdersView() {
                 </View>
               ) : null}
               {orderHistory?.map(e => {
-                return <HistoryButtonBoxScreen orderHistory={e} />;
+                return (
+                  <HistoryButtonBoxScreen
+                    orderHistory={e}
+                    counts={historyCounts}
+                  />
+                );
               })}
               <HistoryBoxScreen />
             </Animated.View>

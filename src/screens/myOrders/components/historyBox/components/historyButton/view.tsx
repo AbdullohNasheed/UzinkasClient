@@ -11,7 +11,7 @@ import {styles} from './style';
 import {HistoryViewScreen} from '../history';
 import {statuses} from '../../../activeBox/components/myOrder/view';
 import QRCode from 'react-native-qrcode-svg';
-const HistoryButtonView = ({orderHistory}) => {
+const HistoryButtonView = ({orderHistory, counts}) => {
   const [shouldShow, setShouldShow] = useState(true);
   return (
     <>
@@ -38,7 +38,9 @@ const HistoryButtonView = ({orderHistory}) => {
         </View>
       </TouchableOpacity>
       <View style={{marginHorizontal: 20}}>
-        {!shouldShow ? <HistoryViewScreen orderHistory={orderHistory} /> : null}
+        {!shouldShow ? (
+          <HistoryViewScreen orderHistory={orderHistory} counts={counts} />
+        ) : null}
       </View>
     </>
   );
