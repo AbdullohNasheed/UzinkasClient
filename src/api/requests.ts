@@ -48,6 +48,6 @@ export const requests = {
     getActive: () => axiosInstance.get('/activeOrders'),
     getActs: () => axiosInstance.get('/getClientActs'),
     getHistory: () =>
-      axiosInstance.get('/orderHistory?from=15-11-2022&to=25-11-2022'),
+      axiosInstance.get('/orderHistory?from=15-11-2019&to=25-11-2023'),
   },
 };

@@ -92,7 +92,6 @@ export function MyOrdersView() {
   useEffect(() => {
     handleSlide(xTabOne);
   }, [state.active]);
-  console.log({historyCounts, activeCounts});
 
   return (
     <View style={{flex: 1, backgroundColor: 'rgba(36, 37, 49, 1)'}}>

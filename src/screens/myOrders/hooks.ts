@@ -36,8 +36,7 @@ export const useHistoryData = () => {
     try {
       setLoading(true);
       let res = await requests.getHistory.getHistory();
-      setOrderHistory(res.data.orders.data);
-      console.log(res.data);
+      setOrderHistory(res.data.orders);
 
       setLoading(false);
       setCounts({
@@ -45,7 +44,7 @@ export const useHistoryData = () => {
         total: res.data.total,
         totalAll: res.data.totalAll,
       });
-      console.log(res.data);
+      console.log(res.data, 'ORDERS DATA');
     } catch (error) {
       console.log(error.response);
       setLoading(false);

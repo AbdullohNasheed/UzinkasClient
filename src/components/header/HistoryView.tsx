@@ -6,14 +6,14 @@ import QRCode from 'react-native-qrcode-svg';
 import dayjs from 'dayjs';
 
 const History = ({orderHistory, counts}) => {
+  console.log({orderHistory});
+
   return (
     <View style={styles.container}>
       <View style={styles.boxOne}>
         <View style={styles.flexOne}>
           <View style={styles.historyBox}>
-            <Text style={styles.textOne}>
-              {dayjs(orderHistory.date).format("DD-MM-YYYY")}
-            </Text>
+            <Text style={styles.textOne}>{orderHistory.date}</Text>
           </View>
           <View style={styles.historyBox}>
             <Text style={styles.textOne}>Статус:</Text>
