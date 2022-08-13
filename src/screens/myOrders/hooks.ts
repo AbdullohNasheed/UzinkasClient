@@ -11,7 +11,6 @@ export const useActiveData = () => {
       let res = await requests.getHistory.getActive();
       setOrder(res.data.orders || []);
       setLoading(false);
-      console.log(res.data.orders || []);
       setCounts({
         tariff: res.data.tarif,
         total: res.data.total,

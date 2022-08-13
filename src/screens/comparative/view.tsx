@@ -1,12 +1,11 @@
 import {View, Text, TextInput, SafeAreaView, ScrollView} from 'react-native';
 import React from 'react';
 import {styles} from './style';
-import CalendarBox from '../../components/header/Calaendar';
 import HeaderComponent from '../../components/header/Header';
 import DefaultButton from '../../components/general/DefaultButton';
-import {ComparativeHooks} from '../myOrders/components/historyBox/hooks';
 import {ComparativeOneHooks} from './hooks';
 import {SmsIcon} from '../../assets/icons/icons';
+import CalendarOne from '../../components/calendar/CalendarOne';
 
 const ComparativeView = () => {
   const {onPress} = ComparativeOneHooks();
@@ -19,7 +18,7 @@ const ComparativeView = () => {
           text="Сравнительный акт"
         />
         <ScrollView>
-          <View style={{paddingTop: 20, paddingBottom: 110,}}>
+          <View style={{paddingTop: 20, paddingBottom: 110}}>
             <View style={{marginHorizontal: 20}}>
               <View
                 style={{
@@ -36,9 +35,8 @@ const ComparativeView = () => {
                   paddingHorizontal: 10,
                   paddingVertical: 10,
                   borderRadius: 10,
-                }}>
-                <CalendarBox />
-              </View>
+                }}></View>
+              <CalendarOne />
             </View>
             <View style={styles.inputBox}>
               <SmsIcon />

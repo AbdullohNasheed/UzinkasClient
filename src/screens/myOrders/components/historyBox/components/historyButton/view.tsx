@@ -9,7 +9,7 @@ import {
 import React, {useState} from 'react';
 import {styles} from './style';
 import {HistoryViewScreen} from '../history';
-import {statuses} from '../../../activeBox/components/myOrder/view';
+import {statuses, statusesColor} from '../../../activeBox/components/myOrder/view';
 import QRCode from 'react-native-qrcode-svg';
 
 const HistoryButtonView = ({orderHistory, counts}) => {
@@ -34,8 +34,16 @@ const HistoryButtonView = ({orderHistory, counts}) => {
           </View>
         </View>
         <View style={styles.flexTwo}>
-          <Text style={styles.textOne}>Статус:</Text>
-          <Text style={styles.textTwo}>{statuses[orderHistory?.status]}</Text>
+          {statuses[orderHistory?.status] ? (
+            <Text style={styles.textOne}>Статус:</Text>
+          ) : null}
+          <Text
+            style={[
+              styles.textTwo,
+              {color: statusesColor[orderHistory?.status]},
+            ]}>
+            {statuses[orderHistory?.status]}
+          </Text>
         </View>
       </TouchableOpacity>
       <View style={{marginHorizontal: 20}}>

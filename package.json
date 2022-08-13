@@ -23,7 +23,7 @@
     "moment": "^2.29.1",
     "react": "17.0.2",
     "react-native": "0.66.3",
-    "react-native-calendars": "^1.1279.0",
+    "react-native-calendario": "^3.1.0",
     "react-native-daterange-picker": "^1.5.1",
     "react-native-gesture-handler": "^2.1.0",
     "react-native-mask-input": "^1.2.0",

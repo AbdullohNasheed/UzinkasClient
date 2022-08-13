@@ -16,11 +16,18 @@ import {requests} from '../../../../../../api/requests';
 import {ActivityIndicator} from 'react-native-paper';
 
 export let statuses = {
-  '0': ' Новая заявка',
+  '0':' Новая заявка',
   '1': ' Принята инкасатором',
   '2': ' Привязано инкасатору',
   '3': ' Отмененная инкасация',
 };
+export let statusesColor = {
+  '0': 'rgba(0, 152, 153, 1)',
+  '1': 'rgba(0, 152, 153, 1)',
+  '2': 'rgba(0, 152, 153, 1) ',
+  '3': 'red',
+};
+
 let phone = 998595937;
 const MyOrderView = ({order, counts}) => {
   const [modalVisible, setModalVisible] = useState(false);

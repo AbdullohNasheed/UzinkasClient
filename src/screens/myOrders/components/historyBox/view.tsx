@@ -6,7 +6,7 @@ import DefaultButton from '../../../../components/general/DefaultButton';
 import {ComparativeHooks} from './hooks';
 import HistoryButtonView from './components/historyButton/view';
 
-const HistoryViewOne = ({orderHistory}) => {
+const HistoryViewOne = () => {
   const {onPress} = ComparativeHooks();
   let phone = +998998595937;
   return (

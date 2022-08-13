@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import { statuses } from '../../../activeBox/components/myOrder/view';
 
 export const styles = StyleSheet.create({
   container: {
@@ -57,7 +58,7 @@ export const styles = StyleSheet.create({
   },
   textTwo: {
     fontSize: 18,
-    color: '#rgba(0, 152, 153, 1)',
+    color:'#rgba(0, 152, 153, 1)',
     fontWeight: 'bold',
     marginLeft: 5,
   },
