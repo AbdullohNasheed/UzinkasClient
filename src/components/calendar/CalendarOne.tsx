@@ -1,19 +1,18 @@
 import {View, Text} from 'react-native';
 import React from 'react';
 import {Calendar} from 'react-native-calendario';
-
 const CalendarOne = () => {
   return (
     <View>
       <Calendar
-        onChange={range => console.log(range)}
-        minDate={new Date(2018, 3, 20)}
-        startDate={new Date(2018, 3, 30)}
-        endDate={new Date(2018, 4, 5)}
+        // onChange={range => console.log(range)}
+        // minDate={new Date(2022, 8, 5)}
+        startDate={new Date(2022, 8, 21)}
+        endDate={new Date(2022, 8, 22)}
         theme={{
           activeDayColor: {},
           monthTitleTextStyle: {
-            color: '#6d95da',
+            color: '#fff',
             fontWeight: '300',
             fontSize: 16,
           },
@@ -24,34 +23,43 @@ const CalendarOne = () => {
           weekColumnsContainerStyle: {},
           weekColumnStyle: {
             paddingVertical: 10,
+            borderRadius: 40,
           },
           weekColumnTextStyle: {
-            color: '#b6c1cd',
+            color: '#b1c',
             fontSize: 13,
           },
           nonTouchableDayContainerStyle: {},
           nonTouchableDayTextStyle: {},
           startDateContainerStyle: {},
           endDateContainerStyle: {},
-          dayContainerStyle: {},
-          dayTextStyle: {
-            color: '#2d4150',
-            fontWeight: '200',
-            fontSize: 15,
+          dayContainerStyle: {
+            backgroundColor: ' red',
           },
-          dayOutOfRangeContainerStyle: {},
+          dayTextStyle: {
+            color: '#fff',
+            fontWeight: '400',
+            fontSize: 16,
+          },
+          dayOutOfRangeContainerStyle: {
+            backgroundColor: 'yellow',
+          },
           dayOutOfRangeTextStyle: {},
           todayContainerStyle: {},
           todayTextStyle: {
             color: '#6d95da',
           },
           activeDayContainerStyle: {
-            backgroundColor: '#6d95da',
+            backgroundColor: '#fff',
+            borderWidth: 1,
           },
           activeDayTextStyle: {
-            color: 'white',
+            color: '#F2F2F2',
           },
-          nonTouchableLastMonthDayTextStyle: {},
+          nonTouchableLastMonthDayTextStyle: {
+            color: 'red',
+            backgroundColor: ' red',
+          },
         }}
       />
     </View>

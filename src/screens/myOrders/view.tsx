@@ -217,7 +217,7 @@ export function MyOrdersView() {
                   />
                 );
               })}
-              {/* <HistoryBoxScreen /> */}
+              <HistoryBoxScreen />
             </Animated.View>
           </ScrollView>
         </View>
