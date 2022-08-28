@@ -8,18 +8,10 @@ import HistoryButtonView from './components/historyButton/view';
 
 const HistoryViewOne = () => {
   const {onPress} = ComparativeHooks();
-  let phone = +998998595937;
   return (
     <View style={styles.container}>
       <View style={styles.buttonContainer}>
-        {/* <HistoryButtonView orderHistory={orderHistory} /> */}
         <DefaultButton onPress={onPress} text={'Заказать сравнительный акт'} />
-        {/* <DefaultButton
-          onPress={() => {
-            Linking.openURL(`tel:${phone}`);
-          }}
-          text={'Позвонить инкассатору'}
-        /> */}
       </View>
     </View>
   );

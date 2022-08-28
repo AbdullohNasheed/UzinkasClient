@@ -1,69 +1,72 @@
-import {View, Text} from 'react-native';
-import React from 'react';
-import {Calendar} from 'react-native-calendario';
+import {View, Text, StyleSheet} from 'react-native';
+import React, {useState} from 'react';
+import CalendarPicker from 'react-native-calendar-picker';
+import {style} from '../../screens/OrderForAnaAdditionalVisit/styles';
+import {styles} from '../../screens/choosing/style';
+import {ArrowLeftIcon, ArroWRightIcon} from '../../assets/icons/icons';
+
 const CalendarOne = () => {
+  const [selectedStartDate, setSelectedStartDate] = useState(null);
+  const [selectedEndDate, setSelectedEndDate] = useState(null);
+  console.log('selectedStartDate', selectedStartDate);
+  console.log('selectedEndDate', selectedEndDate);
+
+  const onDateChange = (date, type) => {
+    //function to handle the date change
+    if (type === 'END_DATE') {
+      setSelectedEndDate(date);
+    } else {
+      setSelectedEndDate(null);
+      setSelectedStartDate(date);
+    }
+  };
   return (
-    <View>
-      <Calendar
-        // onChange={range => console.log(range)}
-        // minDate={new Date(2022, 8, 5)}
-        startDate={new Date(2022, 8, 21)}
-        endDate={new Date(2022, 8, 22)}
-        theme={{
-          activeDayColor: {},
-          monthTitleTextStyle: {
-            color: '#fff',
-            fontWeight: '300',
-            fontSize: 16,
-          },
-          emptyMonthContainerStyle: {},
-          emptyMonthTextStyle: {
-            fontWeight: '200',
-          },
-          weekColumnsContainerStyle: {},
-          weekColumnStyle: {
-            paddingVertical: 10,
-            borderRadius: 40,
-          },
-          weekColumnTextStyle: {
-            color: '#b1c',
-            fontSize: 13,
-          },
-          nonTouchableDayContainerStyle: {},
-          nonTouchableDayTextStyle: {},
-          startDateContainerStyle: {},
-          endDateContainerStyle: {},
-          dayContainerStyle: {
-            backgroundColor: ' red',
-          },
-          dayTextStyle: {
-            color: '#fff',
-            fontWeight: '400',
-            fontSize: 16,
-          },
-          dayOutOfRangeContainerStyle: {
-            backgroundColor: 'yellow',
-          },
-          dayOutOfRangeTextStyle: {},
-          todayContainerStyle: {},
-          todayTextStyle: {
-            color: '#6d95da',
-          },
-          activeDayContainerStyle: {
-            backgroundColor: '#fff',
-            borderWidth: 1,
-          },
-          activeDayTextStyle: {
-            color: '#F2F2F2',
-          },
-          nonTouchableLastMonthDayTextStyle: {
-            color: 'red',
-            backgroundColor: ' red',
-          },
-        }}
-      />
-    </View>
+    <CalendarPicker
+      startFromMonday={true}
+      allowRangeSelection={true}
+      minDate={new Date(2022, 1, 1)}
+      maxDate={new Date(2050, 6, 3)}
+      weekdays={['Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat', 'Sun']}
+      months={[
+        'January',
+        'Febraury',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December',
+      ]}
+      previousTitle={
+        <View style={{}}>
+          <ArrowLeftIcon />
+        </View>
+      }
+      nextTitle={
+        <View>
+          <ArroWRightIcon />
+        </View>
+      }
+      todayBackgroundColor="#42434c"
+      selectedDayColor="#009899"
+      selectedDayTextColor="#000000"
+      scaleFactor={375}
+      textStyle={{
+        // fontFamily: 'Cochin',
+        color: '#fff',
+      }}
+      onDateChange={onDateChange}
+    />
   );
 };
 
 export default CalendarOne;
+const stlyes = StyleSheet.create({
+  left: {
+    left: 100,
+  },
+});

@@ -20,23 +20,9 @@ const ComparativeView = () => {
         <ScrollView>
           <View style={{paddingTop: 20, paddingBottom: 110}}>
             <View style={{marginHorizontal: 20}}>
-              <View
-                style={{
-                  shadowColor: '#000',
-                  shadowOffset: {
-                    width: 0,
-                    height: 0,
-                  },
-                  shadowOpacity: 0.3,
-                  shadowRadius: 8.35,
-
-                  elevation: 19,
-                  backgroundColor: '#2b2c36',
-                  paddingHorizontal: 10,
-                  paddingVertical: 10,
-                  borderRadius: 10,
-                }}></View>
-              <CalendarOne />
+              <View>
+                <CalendarOne />
+              </View>
             </View>
             <View style={styles.inputBox}>
               <SmsIcon />

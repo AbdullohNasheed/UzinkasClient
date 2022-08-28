@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 import {ActivityIndicator} from 'react-native-paper';
 import {DataWhiteIcon} from '../../assets/icons/icons';
+import CalendarOne from '../../components/calendar/CalendarOne';
 import HeaderComponent from '../../components/header/Header';
 import {ActiveBoxScreen} from './components/activeBox';
 import {HistoryBoxScreen} from './components/historyBox';
@@ -30,7 +31,7 @@ export function MyOrdersView() {
   const {order, loading, counts: activeCounts} = useActiveData();
   const {orderHistory, loadingOne, counts: historyCounts} = useHistoryData();
   const [animated, setAnimated] = useState(true);
-  console.log(order,'00000000000000000000000000111111111')
+  console.log(order, '00000000000000000000000000111111111');
   console.log(orderHistory, '00000000000000000000000000111111111');
 
   const [state, setState] = useState({
@@ -206,7 +207,7 @@ export function MyOrdersView() {
               </TouchableOpacity>
               {!animated ? (
                 <View style={{margin: 20}}>
-                  {/* <CalendarBox /> */}
+                  <CalendarOne />
                 </View>
               ) : null}
               {orderHistory?.map(e => {
